@@ -1,0 +1,49 @@
+# Update
+auto-update = check
+auto-update-channel = stable
+
+
+# Shell
+shell-integration = zsh
+shell-integration-features = title
+
+
+# Keybinds
+keybind = super+r=reload_config
+
+
+# Theme
+config-file = themes/rosepine
+
+
+# Font
+font-family = JetBrainsMonoNL Nerd Font 
+font-size = 16
+font-thicken = true
+
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+
+    
+# Window
+window-decoration = true
+window-padding-x = 10
+window-padding-y = 5
+window-padding-balance = true
+fullscreen = false
+macos-non-native-fullscreen = false
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+mouse-hide-while-typing = false
+confirm-close-surface = false
+
+
+# Other
+link-url = true
+
+
+# Tmux startup
+command = "/bin/zsh -c '~/.config/ghostty/start-tmux.sh'"
