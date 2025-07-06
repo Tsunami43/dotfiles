@@ -13,7 +13,7 @@ keybind = super+r=reload_config
 
 
 # Theme
-config-file = themes/rosepine
+config-file = themes/catppuccin.conf
 
 
 # Font

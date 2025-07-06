@@ -6,7 +6,7 @@ return {
         config = function()
             require("mason-null-ls").setup({
                 ensure_installed = {
-                    "black", -- Formatter for Python
+                    "black",  -- Formatter for Python
                     "stylua", -- Formatter for Lua
                 },
                 automatic_installation = true,
@@ -15,7 +15,7 @@ return {
 
             null_ls.setup({
                 sources = {
-                    null_ls.builtins.formatting.black, -- Formatter for Python
+                    null_ls.builtins.formatting.black,  -- Formatter for Python
                     null_ls.builtins.formatting.stylua, -- Formatter for Lua
                 },
             })

@@ -9,8 +9,6 @@ My personal dotfiles for macOS and Linux, including shell, editor, and CLI tool 
 | File / Directory     | Purpose                                 |
 |----------------------|------------------------------------------|
 | `.zshrc`             | Main Zsh shell configuration             |
-| `.p10k.zsh`          | Powerlevel10k theme config (optional)    |
-| `.gitconfig`         | Git global config                        |
 | `.config/`           | App configs (`nvim`, `tmux`, `starship`, `aerospace`, etc.) |
 | `Makefile`           | Automates installation & symlinking      |
 
@@ -38,8 +36,6 @@ Automatically installs (depending on your OS):
 
 * Editors/CLI: neovim, tmux, bat, eza, yazi, ghostty
 
-* Utilities: git, zip, unzip, node, npm
-
-* Python: pyenv (for managing Python versions)
+* Utilities: git, zip, unzip, node, cargo, uv
 
 * macOS tiling manager: aerospace (via npm — install manually if needed)

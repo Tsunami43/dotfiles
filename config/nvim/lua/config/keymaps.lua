@@ -139,22 +139,3 @@ map("n", '"', ":lua insert_type_ignore()<CR>", opts)
 map("n", "<Space>", "", opts)
 map("n", "<C-f>", "", opts)
 map("n", "c", "", opts)
-
-vim.keymap.set("v", "<leader>tr", function()
-    local start_pos = vim.fn.getpos("'<")
-    local end_pos = vim.fn.getpos("'>")
-    local lines = vim.fn.getline(start_pos[2], end_pos[2])
-
-    if #lines == 0 then
-        return
-    end
-
-    lines[1] = string.sub(lines[1], start_pos[3])
-    lines[#lines] = string.sub(lines[#lines], 1, end_pos[3])
-
-    local text = table.concat(lines, " ")
-    local cmd = "trans -b :ru " .. vim.fn.shellescape(text)
-    local output = vim.fn.system(cmd)
-
-    vim.notify(output, vim.log.levels.INFO, { title = "Перевод" })
-end, { desc = "Перевод выделенного текста на русский" })

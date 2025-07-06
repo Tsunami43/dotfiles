@@ -3,4 +3,4 @@ require("config.lazy")
 require("config.keymaps")
 
 -- Setup colorscheme
-vim.cmd("colorscheme kanagawa-wave")
+vim.cmd("colorscheme catppuccin-frappe")
