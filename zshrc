@@ -36,6 +36,9 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # 🧱 Environment: Language & Toolchain Paths
 export HOMEBREW_NO_ENV_HINTS=1
 
+# scripts
+export PATH="$HOME/bin:$PATH"
+
 # poetry
 export PATH="$HOME/.local/bin:$PATH"
 

@@ -1,4 +1,6 @@
 DOTFILES_DIR := $(CURDIR)
+BIN_DIR := $(HOME)/bin
+SCRIPTS_DIR := $(DOTFILES_DIR)/scripts
 
 # ANSI Colors
 GREEN  := \033[1;32m
@@ -13,18 +15,33 @@ FAIL   := ✘
 ARROW  := →
 DONE   := ✅
 
-.PHONY: symlink install all
+.PHONY: symlink install symlink-scripts all
+
 
 all:
 	@echo "$(BLUE)$(ARROW) Starting full install...$(RESET)"
 	@$(MAKE) symlink
 	@$(MAKE) install
+	@$(MAKE) symlink-scripts
+
+
+symlink-scripts:
+	@echo "$(BLUE)$(ARROW) Creating symlinks for scripts in $(BIN_DIR)...$(RESET)"
+	@mkdir -p $(BIN_DIR)
+	@for script in $(SCRIPTS_DIR)/*.sh; do \
+		name=$$(basename $$script .sh); \
+		ln -sf $$script $(BIN_DIR)/$$name; \
+		chmod +x $$script; \
+		echo "$(GREEN)🔗 Linked $$script as $(BIN_DIR)/$$name$(RESET)"; \
+	done
+	@echo "$(GREEN)$(CHECK) All script symlinks created.$(RESET)"
 
 symlink:
 	@echo "$(BLUE)$(ARROW) Creating symlinks...$(RESET)"
 	@ln -sf $(DOTFILES_DIR)/zshrc $(HOME)/.zshrc
 	@ln -sf $(DOTFILES_DIR)/config $(HOME)/.config
 	@echo "$(GREEN)$(CHECK) Symlinks created.$(RESET)"
+
 
 define INSTALL_BREW_PKG
 	@echo "$(BLUE)$(ARROW) Checking $(1)...$(RESET) "
