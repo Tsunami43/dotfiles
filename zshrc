@@ -59,7 +59,7 @@ export TMUX_CONF="$HOME/.config/tmux/tmux.conf"
 # ⚙️ Useful Aliases & Functions
 
 # Neovim config shortcut
-function nvimconfig() {
+function nvimconf() {
   cd "$PATH_TO_DOTFILES/config/nvim" && nvim
 }
 

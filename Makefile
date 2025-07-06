@@ -74,23 +74,8 @@ install:
 	$(call INSTALL_BREW_PKG,zip)
 	$(call INSTALL_BREW_PKG,unzip)
 	$(call INSTALL_BREW_PKG,curl)
+
 	$(call INSTALL_BREW_PKG,zsh)
-	$(call INSTALL_BREW_PKG,htop)
-	$(call INSTALL_BREW_PKG,aerospace)
-	$(call INSTALL_BREW_PKG,fastfetch)
-	$(call INSTALL_BREW_PKG,ghostty)
-	$(call INSTALL_BREW_PKG,starship)
-	$(call INSTALL_BREW_PKG,yazi)
-	$(call INSTALL_BREW_PKG,zoxide)
-	$(call INSTALL_BREW_PKG,eza)
-	$(call INSTALL_BREW_PKG,neovim)
-	$(call INSTALL_BREW_PKG,tmux)
-	$(call INSTALL_BREW_PKG,bat)
-	$(call INSTALL_BREW_PKG,node)
-	$(call INSTALL_BREW_PKG,uv)
-	$(call INSTALL_BREW_PKG,pyenv)
-
-
 	@echo "$(BLUE)$(ARROW) Installing Oh My Zsh & Plugins...$(RESET)"
 	@if [ -d "$(HOME)/.oh-my-zsh" ]; then \
 		echo "$(GREEN)$(CHECK) Oh My Zsh already installed$(RESET)"; \
@@ -102,42 +87,9 @@ install:
 			echo "$(RED)$(FAIL) Oh My Zsh install failed$(RESET)"; \
 		fi; \
 	fi
+	$(call INSTALL_BREW_PKG,zsh-autosuggestions)
+	$(call INSTALL_BREW_PKG,zsh-syntax-highlighting)
 
-	@if [ -d "$(HOME)/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then \
-		echo "$(GREEN)$(CHECK) zsh-autosuggestions already installed$(RESET)"; \
-	else \
-		echo "$(YELLOW)$(ARROW) Installing zsh-autosuggestions...$(RESET)"; \
-		if git clone https://github.com/zsh-users/zsh-autosuggestions.git $(HOME)/.oh-my-zsh/custom/plugins/zsh-autosuggestions >/dev/null 2>&1; then \
-			echo "$(GREEN)$(CHECK) zsh-autosuggestions installed$(RESET)"; \
-		else \
-			echo "$(RED)$(FAIL) Failed to install zsh-autosuggestions$(RESET)"; \
-		fi; \
-	fi
-
-
-	@if [ -d "$(HOME)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then \
-		echo "$(GREEN)$(CHECK) zsh-syntax-highlighting already installed$(RESET)"; \
-	else \
-		echo "$(YELLOW)$(ARROW) Installing zsh-syntax-highlighting...$(RESET)"; \
-		if git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $(HOME)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting >/dev/null 2>&1; then \
-			echo "$(GREEN)$(CHECK) zsh-syntax-highlighting installed$(RESET)"; \
-		else \
-			echo "$(RED)$(FAIL) Failed to install zsh-syntax-highlighting$(RESET)"; \
-		fi; \
-	fi
-
-
-	@echo "$(BLUE)$(ARROW) Checking poetry...$(RESET) "
-	@if command -v poetry >/dev/null 2>&1; then \
-		echo "$(GREEN)$(CHECK) Installed$(RESET)"; \
-	else \
-		echo "$(YELLOW)$(ARROW) Installing poetry...$(RESET)"; \
-		if curl -sSL https://install.python-poetry.org | python3 - >/dev/null 2>&1; then \
-			echo "$(GREEN)$(CHECK) poetry installed$(RESET)"; \
-		else \
-			echo "$(RED)$(FAIL) Failed to install poetry$(RESET)"; \
-		fi; \
-	fi
 
 
 	@echo "$(BLUE)$(ARROW) Checking rustup...$(RESET) "
@@ -151,7 +103,37 @@ install:
 			echo "$(RED)$(FAIL) Failed to install rustup$(RESET)"; \
 		fi; \
 	fi
-	
+
+
+	$(call INSTALL_BREW_PKG,htop)
+	$(call INSTALL_BREW_PKG,aerospace)
+	$(call INSTALL_BREW_PKG,fastfetch)
+	$(call INSTALL_BREW_PKG,ghostty)
+	$(call INSTALL_BREW_PKG,starship)
+	$(call INSTALL_BREW_PKG,yazi)
+	$(call INSTALL_BREW_PKG,zoxide)
+	$(call INSTALL_BREW_PKG,eza)
+	$(call INSTALL_BREW_PKG,node)
+	$(call INSTALL_BREW_PKG,neovim)
+	$(call INSTALL_BREW_PKG,tmux)
+	$(call INSTALL_BREW_PKG,bat)
+
+
+	$(call INSTALL_BREW_PKG,uv)
+	$(call INSTALL_BREW_PKG,pyenv)
+
+	@echo "$(BLUE)$(ARROW) Checking poetry...$(RESET) "
+	@if command -v poetry >/dev/null 2>&1; then \
+		echo "$(GREEN)$(CHECK) Installed$(RESET)"; \
+	else \
+		echo "$(YELLOW)$(ARROW) Installing poetry...$(RESET)"; \
+		if curl -sSL https://install.python-poetry.org | python3 - >/dev/null 2>&1; then \
+			echo "$(GREEN)$(CHECK) poetry installed$(RESET)"; \
+		else \
+			echo "$(RED)$(FAIL) Failed to install poetry$(RESET)"; \
+		fi; \
+	fi
+
 
 	@echo ""
 	@echo "$(GREEN)=======================================$(RESET)"
