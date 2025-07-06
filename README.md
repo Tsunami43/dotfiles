@@ -1,41 +1,46 @@
-# 🛠️ dotfiles
+🛠️ **Dotfiles Setup**
 
-My personal dotfiles for macOS and Linux, including shell, editor, and CLI tool configurations.
-
----
-
-## 📁 Contents
-
-| File / Directory     | Purpose                                 |
-|----------------------|------------------------------------------|
-| `.zshrc`             | Main Zsh shell configuration             |
-| `.config/`           | App configs (`nvim`, `tmux`, `starship`, `aerospace`, etc.) |
-| `Makefile`           | Automates installation & symlinking      |
+───────────────────────────────────────────────  
+🚀 **Welcome to my Personal Dotfiles Repo!** 🚀  
+───────────────────────────────────────────────
 
 ---
 
-## ⚙️ Setup
+## 📂 **Contents**
 
-### 1. Clone this repo
+| 📁 File / Directory       | 📝 Purpose                                                  |
+|--------------------------|------------------------------------------------------------|
+| `zshrc`               | 🔧 Main Zsh shell configuration                              |
+| `config/`             | ⚙️ App configs: `nvim`, `tmux`, `starship, `aerospace`, etc.  |
+| `Makefile`             | 📦 Installation & symlinking automation                      |
+| `scripts/`             | 🛠️ Custom scripts (e.g. `cloc.sh`)                         |
+
+---
+
+## ⚙️ **Setup**
+
+### 1️⃣ Clone the repo
 
 ```bash
 git clone https://github.com/your-username/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-### 2. Install
+### 2️⃣ Run the installer
+
 ```bash
 make
 ```
 
-## 📦 Tools Installed
+---
 
-Automatically installs (depending on your OS):
+## ✨ **Installed Tools Overview**
 
-* Shell: zsh, oh-my-zsh, powerlevel10k or starship
+| 🔰 Category           | 🛠️ Tools                                                                                  |
+|----------------------|------------------------------------------------------------------------------------------|
+| Shell & Prompt       | `zsh`, `oh-my-zsh`, `starship`                                |
+| Editors & CLI        | `neovim`, `tmux`, `bat`, `eza`, `yazi`, `ghostty`                            |
+| Utilities            | `git`, `zip`, `unzip`, `node`, `cargo`, `uv` (Python & Rust tools)          |
+| macOS Tiling Manager | `aerospace` (via npm — manual install recommended)                                    |
 
-* Editors/CLI: neovim, tmux, bat, eza, yazi, ghostty
-
-* Utilities: git, zip, unzip, node, cargo, uv
-
-* macOS tiling manager: aerospace (via npm — install manually if needed)
+---
