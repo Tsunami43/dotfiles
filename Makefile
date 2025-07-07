@@ -87,9 +87,7 @@ install:
 			echo "$(RED)$(FAIL) Oh My Zsh install failed$(RESET)"; \
 		fi; \
 	fi
-	$(call INSTALL_BREW_PKG,zsh-autosuggestions)
 	$(call INSTALL_BREW_PKG,zsh-syntax-highlighting)
-
 
 
 	@echo "$(BLUE)$(ARROW) Checking rustup...$(RESET) "
