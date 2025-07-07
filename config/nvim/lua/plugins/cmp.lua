@@ -1,12 +1,11 @@
 return {
-    -- Плагины для автодополнения
     "hrsh7th/nvim-cmp",
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp",     -- Источник автодополнения для LSP
-        "hrsh7th/cmp-buffer",       -- Источник для слов из текущего буфера
-        "hrsh7th/cmp-path",         -- Источник для файловой системы
-        "saadparwaiz1/cmp_luasnip", -- Источник для сниппетов
-        "L3MON4D3/LuaSnip",         -- Плагин для сниппетов
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "saadparwaiz1/cmp_luasnip",
+        "L3MON4D3/LuaSnip",
         "onsails/lspkind.nvim",
     },
     config = function()
@@ -17,7 +16,7 @@ return {
         cmp.setup({
             snippet = {
                 expand = function(args)
-                    luasnip.lsp_expand(args.body) -- Поддержка сниппетов
+                    luasnip.lsp_expand(args.body)
                 end,
             },
             formatting = {
@@ -29,29 +28,29 @@ return {
                 }),
             },
             mapping = {
-                ["<C-Space>"] = cmp.mapping.complete(),            -- Открыть меню автодополнения
-                ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Подтвердить выбор
+                ["<C-Space>"] = cmp.mapping.complete(),
+                ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 ["<Down>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
-                        cmp.select_next_item() -- Навигация по меню
+                        cmp.select_next_item()
                     else
-                        fallback()             -- В случае, если меню не видно, выполнить стандартное действие
+                        fallback()
                     end
                 end, { "i", "s" }),
 
                 ["<Up>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
-                        cmp.select_prev_item() -- Навигация по меню
+                        cmp.select_prev_item()
                     else
-                        fallback()             -- В случае, если меню не видно, выполнить стандартное действие
+                        fallback()
                     end
                 end, { "i", "s" }),
             },
             sources = {
-                { name = "nvim_lsp" }, -- Автодополнение от LSP
-                { name = "luasnip" },  -- Сниппеты
-                { name = "buffer" },   -- Слова из буфера
-                { name = "path" },     -- Пути к файлам
+                { name = "nvim_lsp" },
+                { name = "luasnip" },
+                { name = "buffer" },
+                { name = "path" },
                 { name = "codeium" },
             },
         })
