@@ -1,13 +1,11 @@
 return {
-    -- Setup mason-null-ls
     {
         "jayp0521/mason-null-ls.nvim",
         dependencies = { "williamboman/mason.nvim", "nvimtools/none-ls.nvim" },
         config = function()
             require("mason-null-ls").setup({
                 ensure_installed = {
-                    "ruff",
-                    "stylua"
+                    "stylua",
                 },
                 automatic_installation = true,
             })
@@ -16,20 +14,37 @@ return {
 
             null_ls.setup({
                 sources = {
-                    -- Python
-                    null_ls.builtins.formatting.ruff,
-                    null_ls.builtins.diagnostics.ruff,
-
                     -- Lua
                     null_ls.builtins.formatting.stylua,
                 },
             })
 
-            -- Autoformat on save
+            -- Lua
             vim.api.nvim_create_autocmd("BufWritePre", {
-                pattern = { "*.py", "*.lua" },
+                pattern = { "*.lua" },
                 callback = function()
                     vim.lsp.buf.format({ async = false })
+                end,
+            })
+
+            -- Python
+            vim.api.nvim_create_autocmd("BufWritePost", {
+                pattern = "*.py",
+                callback = function()
+                    local filepath = vim.api.nvim_buf_get_name(0)
+
+                    if vim.fn.executable("ruff") == 1 then
+                        local cmd = string.format("ruff check --fix %q", filepath)
+                        local result = vim.fn.system(cmd)
+                        print(result)
+                    elseif vim.fn.executable("black") == 1 then
+                        local cmd = string.format("black %q", filepath)
+                        local result = vim.fn.system(cmd)
+                        print(result)
+                    else
+                        return
+                    end
+                    vim.cmd("checktime")
                 end,
             })
         end,

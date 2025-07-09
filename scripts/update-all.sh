@@ -4,3 +4,4 @@ brew upgrade --cask
 brew cleanup  
 omz update
 poetry self update
+uv self update

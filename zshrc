@@ -29,8 +29,8 @@ setopt APPEND_HISTORY             # add new history items to history file
 
 # Syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
-
+source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ───────────────────────────────────────────────
 # 🧱 Environment: Language & Toolchain Paths
