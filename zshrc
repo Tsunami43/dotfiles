@@ -39,6 +39,9 @@ export HOMEBREW_NO_ENV_HINTS=1
 # scripts
 export PATH="$HOME/bin:$PATH"
 
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+
 # poetry
 export PATH="$HOME/.local/bin:$PATH"
 

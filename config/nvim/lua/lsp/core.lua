@@ -24,6 +24,7 @@ return {
                     "pyright",
                     "lua_ls",
                     "rust_analyzer",
+                    "gopls",
                 },
                 automatic_installation = true,
             })
@@ -49,6 +50,11 @@ return {
             })
 
             lspconfig.pyright.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            lspconfig.gopls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
