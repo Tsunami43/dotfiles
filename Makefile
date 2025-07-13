@@ -117,7 +117,6 @@ install:
 	$(call INSTALL_BREW_PKG,bat)
 
 
-	$(call INSTALL_BREW_PKG,uv)
 	$(call INSTALL_BREW_PKG,pyenv)
 
 	@echo "$(BLUE)$(ARROW) Checking poetry...$(RESET) "
@@ -131,6 +130,18 @@ install:
 			echo "$(RED)$(FAIL) Failed to install poetry$(RESET)"; \
 		fi; \
 	fi
+
+	@echo "$(BLUE)$(ARROW) Checking pipx...$(RESET) "
+	@if command -v uv >/dev/null 2>&1; then \
+        echo "$(GREEN)$(CHECK) Installed$(RESET)"; \
+    else \
+        echo "$(YELLOW)$(ARROW) Installing uv...$(RESET)"; \
+        if curl -LsSf https://astral.sh/uv/install.sh | sh - >/dev/null 2>&1; then \
+            echo "$(GREEN)$(CHECK) uv installed$(RESET)"; \
+        else \
+            echo "$(RED)$(FAIL) Failed to install uv$(RESET)"; \
+        fi; \
+    fi
 
 
 	@echo ""
