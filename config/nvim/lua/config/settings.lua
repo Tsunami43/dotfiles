@@ -5,6 +5,7 @@ vim.o.textwidth = 80 -- Maximum text width
 vim.o.wrap = true -- Enable visual line wrapping
 vim.o.number = true -- Show line numbers
 vim.o.shiftwidth = 4 -- Indent width when using tabs
+vim.o.tabstop = 4 -- Indent width when using spaces
 vim.o.expandtab = true -- Convert tabs to spaces
 vim.o.smartindent = true -- Enable smart indentation
 vim.o.swapfile = false -- Disable swap file creation
@@ -35,3 +36,16 @@ vim.opt.laststatus = 3 -- Use a single global statusline (Neovim 0.7+)
 -- Remove ~ characters on empty lines at end of buffer
 
 vim.opt.fillchars:append({ eob = " " }) -- Replace end-of-buffer tildes with spaces
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "python",
+    callback = function()
+        vim.bo.expandtab = true
+        vim.bo.shiftwidth = 4
+        vim.bo.tabstop = 4
+        vim.bo.smartindent = true
+        vim.bo.autoindent = true
+        -- Отключаем treesitter indent, если он мешает
+        vim.bo.indentexpr = ""
+    end,
+})

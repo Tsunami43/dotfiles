@@ -32,6 +32,7 @@ return {
                 pattern = "*.py",
                 callback = function()
                     local filepath = vim.api.nvim_buf_get_name(0)
+                    vim.cmd([[retab]])
 
                     if vim.fn.executable("ruff") == 1 then
                         local cmd_fix = string.format("ruff check --fix %q", filepath)
@@ -55,6 +56,15 @@ return {
                 pattern = "*.go",
                 callback = function()
                     vim.lsp.buf.format({ async = false })
+                end,
+            })
+
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = "python",
+                callback = function()
+                    vim.opt_local.smartindent = true
+                    vim.opt_local.autoindent = true
+                    vim.opt_local.indentexpr = ""
                 end,
             })
         end,
