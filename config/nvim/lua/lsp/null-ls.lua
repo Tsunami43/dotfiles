@@ -34,8 +34,10 @@ return {
                     local filepath = vim.api.nvim_buf_get_name(0)
 
                     if vim.fn.executable("ruff") == 1 then
-                        local cmd = string.format("ruff check --fix %q", filepath)
-                        local result = vim.fn.system(cmd)
+                        local cmd_fix = string.format("ruff check --fix %q", filepath)
+                        local cmd_format = string.format("ruff format %q", filepath)
+                        local result = vim.fn.system(cmd_fix)
+                        vim.fn.system(cmd_format)
                         print(result)
                     elseif vim.fn.executable("black") == 1 then
                         local cmd = string.format("black %q", filepath)
