@@ -2,6 +2,7 @@
 
 find . -type f \
   ! -path '*.txt' \
+  ! -path '*.json' \
   ! -path '*.MOV' \
   ! -path '*.ogg' \
   ! -path '*.mp3' \
