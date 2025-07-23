@@ -84,48 +84,7 @@ map("v", "<S-h>", "^", opts)
 map("v", "<S-l>", "g_", opts)
 
 -- Function to replace input text
-_G.replace_selected_or_prompt = function()
-    local search_pattern = vim.fn.input("Replace target: ")
-    if search_pattern == "" then
-        print("Error: Empty search pattern!")
-        return
-    end
-
-    local current_text = vim.fn.getline(1, "$")
-    local found = false
-    for _, line in ipairs(current_text) do
-        if string.find(line, search_pattern) then
-            found = true
-            break
-        end
-    end
-
-    if not found then
-        print("Error replace: '" .. search_pattern .. "' not found!")
-        return
-    end
-
-    local replacement = vim.fn.input("New text: ")
-
-    local command = string.format(
-        "%%s/%s/%s/g",
-        vim.fn.escape(search_pattern, "/\\."),
-        vim.fn.escape(replacement, "/\\")
-    )
-
-    local success, err = pcall(function()
-        vim.cmd(command)
-    end)
-
-    if not success then
-        print("Error replace: " .. err)
-    end
-
-    vim.cmd("normal! n")
-end
-
--- Command to replace input text
-map("n", "R", "<cmd>lua _G.replace_selected_or_prompt()<CR>", opts)
+map("n", "R", ":lua vim.lsp.buf.rename()<CR>", opts)
 
 -- Paste # type: ignore
 _G.insert_type_ignore = function()
