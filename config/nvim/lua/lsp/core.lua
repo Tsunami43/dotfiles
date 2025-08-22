@@ -25,6 +25,7 @@ return {
                     "lua_ls",
                     "rust_analyzer",
                     "gopls",
+                    "typescript-language-server",
                 },
                 automatic_installation = true,
             })
@@ -55,6 +56,11 @@ return {
             })
 
             lspconfig.gopls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            lspconfig.ts_ls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
             })

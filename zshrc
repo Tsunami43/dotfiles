@@ -92,3 +92,9 @@ alias kali="docker run -it leplusorg/kali bin/bash"
 
 # Fancy ls
 alias ls="eza -l --tree --level=1 --icons=always --no-user --no-permissions"
+
+# AsyncAPI CLI Autocomplete
+
+ASYNCAPI_AC_ZSH_SETUP_PATH=/Users/mentor/Library/Caches/@asyncapi/cli/autocomplete/zsh_setup && test -f $ASYNCAPI_AC_ZSH_SETUP_PATH && source $ASYNCAPI_AC_ZSH_SETUP_PATH; # asyncapi autocomplete setup
+
+

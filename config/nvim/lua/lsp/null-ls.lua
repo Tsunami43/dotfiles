@@ -6,6 +6,7 @@ return {
             require("mason-null-ls").setup({
                 ensure_installed = {
                     "stylua",
+                    "prettier",
                 },
                 automatic_installation = true,
             })
@@ -16,6 +17,7 @@ return {
                 sources = {
                     -- Lua
                     null_ls.builtins.formatting.stylua,
+                    null_ls.builtins.formatting.prettier,
                 },
             })
 
@@ -65,6 +67,22 @@ return {
                     vim.opt_local.smartindent = true
                     vim.opt_local.autoindent = true
                     vim.opt_local.indentexpr = ""
+                end,
+            })
+
+            -- Rust
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                pattern = "*.rs",
+                callback = function()
+                    vim.lsp.buf.format({ async = false })
+                end,
+            })
+
+            -- HTML, CSS, JS, JSON, TS
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                pattern = { "*.html", "*.css", "*.js", "*.ts", "*.json" },
+                callback = function()
+                    vim.lsp.buf.format({ async = false })
                 end,
             })
         end,

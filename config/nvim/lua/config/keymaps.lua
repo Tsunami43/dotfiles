@@ -98,3 +98,5 @@ map("n", '"', ":lua insert_type_ignore()<CR>", opts)
 map("n", "<Space>", "", opts)
 map("n", "<C-f>", "", opts)
 map("n", "c", "", opts)
+
+map("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
