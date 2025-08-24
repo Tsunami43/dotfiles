@@ -1,0 +1,5 @@
+
+[[language]]
+name = "python"
+language-servers = [ "pyright" ]
+
