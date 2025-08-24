@@ -1,0 +1,131 @@
+# CodeCompanion игнорирование файлов
+# Этот файл определяет, какие файлы и папки игнорировать при отправке контекста в AI
+
+# Системные файлы
+.DS_Store
+.git/
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# Файлы зависимостей
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+composer.lock
+
+# Сборки и дистрибутивы
+dist/
+build/
+out/
+target/
+*.min.js
+*.min.css
+
+# Переменные окружения
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+
+# Cache и временные файлы
+.cache/
+.npm/
+.vscode/
+.idea/
+*.cache
+
+# Python специфичные
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.tox/
+venv/
+.venv/
+*.egg-info/
+
+# JavaScript/Node специфичные
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Rust специфичные
+target/
+Cargo.lock
+
+# Go специфичные
+vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Java специфичные
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+target/
+
+# C/C++ специфичные
+*.o
+*.a
+*.so
+*.exe
+*.out
+
+# Архивы
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Медиа файлы (обычно не нужны для анализа кода)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.ico
+*.svg
+*.mp4
+*.avi
+*.mov
+*.mp3
+*.wav
+
+# Документация (иногда может быть нужна, раскомментируй если нужно игнорировать)
+# *.md
+# *.txt
+# docs/
+
+# Базы данных
+*.sqlite
+*.db
+*.sqlite3
+
+# Конфигурационные файлы IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Тестовые данные
+test-results/
+coverage/
+*.coverage
