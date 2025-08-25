@@ -1,51 +1,38 @@
--- General Neovim settings
+-- Line numbers
+vim.opt.number = true -- Show line numbers on the left
+vim.opt.relativenumber = true -- Show relative line numbers (useful for movement)
 
-vim.o.clipboard = "unnamedplus" -- Use system clipboard
-vim.o.textwidth = 80 -- Maximum text width
-vim.o.wrap = true -- Enable visual line wrapping
-vim.o.number = true -- Show line numbers
-vim.o.shiftwidth = 4 -- Indent width when using tabs
-vim.o.tabstop = 4 -- Indent width when using spaces
-vim.o.expandtab = true -- Convert tabs to spaces
-vim.o.smartindent = true -- Enable smart indentation
-vim.o.swapfile = false -- Disable swap file creation
-vim.o.backup = false -- Disable backup file creation
-vim.o.hlsearch = true -- Highlight search results
-vim.o.ignorecase = true -- Ignore case in search
-vim.o.smartcase = true -- Override ignorecase if search contains uppercase letters
+-- Mouse support
+vim.opt.mouse = "a" -- Enable mouse support in all modes
 
--- Performance settings
+-- Clipboard
+vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 
-vim.o.updatetime = 300 -- Time in ms to trigger CursorHold & LSP updates
-vim.o.timeoutlen = 500 -- Timeout length for mapped sequences
-vim.o.termguicolors = true -- Enable 24-bit RGB color in terminal
--- vim.o.scrolloff = 5 -- Minimum lines to keep above/below the cursor
-vim.o.sidescrolloff = 15 -- Minimum columns to keep left/right of the cursor
+-- Search settings
+vim.opt.ignorecase = true -- Case insensitive search
+vim.opt.smartcase = true -- Case sensitive if search contains uppercase letters
+vim.opt.hlsearch = true -- Highlight search results
+vim.opt.incsearch = true -- Show search results as you type
 
-vim.o.formatoptions = vim.o.formatoptions:gsub("t", "") -- Disable auto line wrapping in insert mode
+-- Indentation
+vim.opt.tabstop = 4 -- Tab width in spaces
+vim.opt.shiftwidth = 4 -- Number of spaces for auto-indent
+vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.autoindent = true -- Automatically copy indent from previous line
+vim.opt.smartindent = true -- Smart indentation for programming
 
--- Cursor line highlight & customization
+-- Visual settings
+vim.opt.termguicolors = true -- Enable 24-bit RGB color support
+vim.opt.cursorline = true -- Highlight current line
+vim.opt.wrap = false -- Disable line wrapping
+vim.opt.scrolloff = 8 -- Keep 8 lines above/below cursor when scrolling
+vim.opt.sidescrolloff = 8 -- Keep 8 characters left/right of cursor when scrolling
 
-vim.o.cursorline = true -- Highlight the current line
-vim.cmd("highlight CursorLineNr guifg=#ffcc00") -- Set yellow color for current line number
+-- Performance
+vim.opt.updatetime = 100 -- Time in milliseconds for updates (faster completion and signature help)
+vim.opt.timeoutlen = 500 -- Time to wait for key sequence
 
--- Global statusline for all windows
-
-vim.opt.laststatus = 3 -- Use a single global statusline (Neovim 0.7+)
-
--- Remove ~ characters on empty lines at end of buffer
-
-vim.opt.fillchars:append({ eob = " " }) -- Replace end-of-buffer tildes with spaces
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "python",
-    callback = function()
-        vim.bo.expandtab = true
-        vim.bo.shiftwidth = 4
-        vim.bo.tabstop = 4
-        vim.bo.smartindent = true
-        vim.bo.autoindent = true
-        -- Отключаем treesitter indent, если он мешает
-        vim.bo.indentexpr = ""
-    end,
-})
+-- File handling
+vim.opt.swapfile = false -- Disable swap file creation
+vim.opt.backup = false -- Disable backup file creation
+vim.opt.undofile = true -- Save undo history between sessions

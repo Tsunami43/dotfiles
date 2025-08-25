@@ -40,7 +40,7 @@ export HOMEBREW_NO_ENV_HINTS=1
 export PATH="$HOME/bin:$PATH"
 
 # Golang
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # poetry
 export PATH="$HOME/.local/bin:$PATH"

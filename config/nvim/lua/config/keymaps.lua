@@ -1,102 +1,51 @@
--- Leader key is space
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- Key mappings configuration
 
-local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- Move to beginning/end of line
-map("n", "<S-h>", "0", opts)
-map("n", "<S-l>", "$", opts)
+-- Undo/Redo (like IDE)
+vim.keymap.set("n", "<C-z>", "u", opts) -- Undo (Ctrl+Z)
+vim.keymap.set("n", "<C-y>", "<C-r>", opts) -- Redo (Ctrl+Y)
 
--- Remap the 'u' key to call the function
-function MyCustomUndoFunction()
-    vim.cmd("undo")
-    vim.cmd("nohlsearch")
-end
+-- Window navigation with Ctrl + hjkl
+vim.keymap.set("n", "<C-h>", "<C-w>h", opts) -- Move to window left
+vim.keymap.set("n", "<C-j>", "<C-w>j", opts) -- Move to window below
+vim.keymap.set("n", "<C-k>", "<C-w>k", opts) -- Move to window above
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts) -- Move to window right
 
-map("n", "u", ":lua MyCustomUndoFunction()<CR>", { noremap = true, silent = true })
+-- Window resizing with Ctrl + Shift + arrows
+vim.keymap.set("n", "<C-S-Up>", ":resize +2<CR>", opts) -- Increase height
+vim.keymap.set("n", "<C-S-Down>", ":resize -2<CR>", opts) -- Decrease height
+vim.keymap.set("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) -- Decrease width
+vim.keymap.set("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) -- Increase width
 
--- Remap the 'x' key to call the function
-vim.keymap.set("n", "x", [["_x]])
--- leader d delete wont remember as yanked/clipboard when delete pasting
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-map("n", "d", '"_d', opts)
-map("n", "dd", '"_dd', opts)
-map("v", "d", '"_d', opts)
+-- Split windows with leader + w + hjkl
+vim.keymap.set("n", "<leader>wh", "<C-w>v<C-w>h", opts) -- Split left
+vim.keymap.set("n", "<leader>wl", "<C-w>v", opts) -- Split right
+vim.keymap.set("n", "<leader>wj", "<C-w>s", opts) -- Split down
+vim.keymap.set("n", "<leader>wk", "<C-w>s<C-w>k", opts) -- Split up
 
--- Paste empty line
-map("n", "<CR>", "o<Esc>", opts)
+-- Exit mappings (like IDE)
+vim.keymap.set("n", "<C-q>", "<cmd>qa<CR>", opts) -- Quit all (with confirmation)
+vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", opts) -- Force quit all
 
--- New splits
-map("n", "<C-w><C-h>", ":vsplit<CR>", opts)
-map("n", "<C-w><C-j>", ":split<CR>", opts)
-map("n", "<C-w><C-k>", ":split<CR>", opts)
-map("n", "<C-w><C-l>", ":vsplit<CR>", opts)
+-- Close current buffer/file (like IDE close tab)
+vim.keymap.set("n", "<C-c>", "<cmd>close<CR>", opts) -- Close current window (Ctrl+C)
 
--- Открытие/фокусировка neo-tree
-map("n", "<leader>e", ":Neotree toggle<CR>", opts) -- Открыть или закрыть neo-tree
+-- Move lines in visual mode
+vim.keymap.set("v", "<C-K>", ":m '<-2<CR>gv=gv", opts) -- Move selection up
+vim.keymap.set("v", "<C-J>", ":m '>+1<CR>gv=gv", opts) -- Move selection down
+vim.keymap.set("v", "<C-H>", "<gv", opts) -- Move selection left (unindent)
+vim.keymap.set("v", "<C-L>", ">gv", opts) -- Move selection right (indent)
 
--- Move text
-map("v", "<C-L>", ":'<,'>normal! >><CR> V'<,'>", opts)
-map("v", "<C-H>", ":'<,'>normal! <<<CR> V'<,'>", opts)
-map("v", "<C-K>", ":'<,'>move -2<CR>gv", opts)
-map("v", "<C-J>", ":move '>+1<cr>gv=gv", opts)
+-- Save shortcuts (like IDE)
+vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", opts) -- Save file (Ctrl+S)
+vim.keymap.set("i", "<C-s>", "<Esc><cmd>w<CR>a", opts) -- Save in insert mode
 
--- Move to window
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-l>", "<C-w>l", opts)
+-- Format code (configured in LSP)
 
--- Close buffer or exit nvim
-map("n", "<C-q>", ":q<CR>", opts)
-map("n", "<C-c>", ":qa!<CR>", opts) -- Close all
+-- Clear search highlight on Esc (but keep other Esc functionality)
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", opts) -- Clear search highlight
 
--- Save file
-map("n", "<C-s>", ":w<CR>", opts)
-
--- Move to down line
-map("n", "<S-j>", "8j", opts)
--- Move to up line
-map("n", "<S-k>", "8k", opts)
-
--- Delete lines in Visual mode
-map("o", "H", "^", opts)
-map("o", "L", "g_", opts)
-
--- Search current word where cursor
-function search_current_word()
-    if vim.v.hlsearch == 1 then
-        vim.cmd("nohlsearch") -- Off highllight
-    else
-        local word = vim.fn.expand("<cword>")
-        vim.cmd('execute "normal! /' .. word .. '\\<CR>"')
-    end
-end
-
-map("n", "<leader>v", ":lua search_current_word()<CR>", opts)
-
--- Select lines in Visual mode
-map("v", "<S-j>", "10j", opts)
-map("v", "<S-k>", "10k", opts)
-map("v", "<S-h>", "^", opts)
-map("v", "<S-l>", "g_", opts)
-
--- Function to replace input text
-map("n", "R", ":lua vim.lsp.buf.rename()<CR>", opts)
-
--- Paste # type: ignore
-_G.insert_type_ignore = function()
-    local line = vim.api.nvim_get_current_line()
-    local new_line = line .. " # type: ignore"
-    vim.api.nvim_set_current_line(new_line)
-end
-map("n", '"', ":lua insert_type_ignore()<CR>", opts)
-
--- Delete
-map("n", "<Space>", "", opts)
-map("n", "<C-f>", "", opts)
-map("n", "c", "", opts)
-
-map("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
+-- Neo-tree toggle
+vim.keymap.set("n", "<C-n>", "<cmd>Neotree toggle<CR>", opts) -- Toggle file explorer (Ctrl+N)
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree focus<CR>", opts) -- Focus file explorer

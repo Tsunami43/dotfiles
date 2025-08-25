@@ -1,6 +1,8 @@
+-- Load basic settings
 require("config.settings")
-require("config.lazy")
-require("config.keymaps")
 
--- Setup colorscheme
-vim.cmd("colorscheme catppuccin-frappe")
+-- Load plugin manager
+require("config.lazy")
+
+-- Load key mappings
+require("config.keymaps")
