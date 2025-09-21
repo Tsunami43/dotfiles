@@ -1,4 +1,4 @@
-![My Dotfiles](https://tenor.com/ru/view/anime-hacking-speed-fast-gif-22746564)
+![My Dotfiles](https://media1.tenor.com/m/JPX5iWzkrfQAAAAd/akudama-drive-anime.gif)
 
 ---
 
