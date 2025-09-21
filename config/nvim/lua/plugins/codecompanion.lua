@@ -8,20 +8,20 @@ return {
 		},
 		config = function()
 			-- Настройка mini.diff для inline diff
-			require('mini.diff').setup({
+			require("mini.diff").setup({
 				view = {
-					style = 'sign', -- Показывать изменения как знаки
+					style = "sign", -- Показывать изменения как знаки
 					priority = 199,
 				},
 				mappings = {
 					-- Горячие клавиши для принятия/отклонения изменений
-					apply = 'gda', -- DiffAccept - принять изменение
-					reset = 'gdr', -- DiffReject - отклонить изменение
-					textobject = 'gh', -- Выделить изменение
-					goto_first = '[H', -- К первому изменению
-					goto_prev = '[h', -- К предыдущему изменению
-					goto_next = ']h', -- К следующему изменению
-					goto_last = ']H', -- К последнему изменению
+					apply = "gda", -- DiffAccept - принять изменение
+					reset = "gdr", -- DiffReject - отклонить изменение
+					textobject = "gh", -- Выделить изменение
+					goto_first = "[H", -- К первому изменению
+					goto_prev = "[h", -- К предыдущему изменению
+					goto_next = "]h", -- К следующему изменению
+					goto_last = "]H", -- К последнему изменению
 				},
 			})
 
@@ -88,7 +88,7 @@ return {
 							show_default_prompt_library = true,
 						},
 					},
-										diff = {
+					diff = {
 						enabled = true,
 						provider = "inline", -- Inline diff прямо в файле
 						close_chat_at = 240, -- Close chat buffer if columns < 240
@@ -194,10 +194,10 @@ return {
 			-- Основные команды CodeCompanion
 			vim.keymap.set("v", "<leader>ae", "<cmd>CodeCompanionChat<cr>", opts)
 			vim.keymap.set("n", "<leader>at", "<cmd>CodeCompanionChat<cr>", opts)
-			
+
 			-- Actions (action palette)
-			vim.keymap.set({"n", "v"}, "<leader>aa", "<cmd>CodeCompanionActions<cr>", opts)
-			
+			vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionActions<cr>", opts)
+
 			-- Inline assistant с прямым применением изменений
 			vim.keymap.set("v", "<leader>ai", function()
 				-- Получаем выделенный текст
@@ -205,17 +205,17 @@ return {
 				local end_line = vim.fn.line("'>")
 				local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
 				local selected_text = table.concat(lines, "\n")
-				
+
 				-- Открываем inline assistant для выделенного текста
 				vim.cmd("CodeCompanionInline")
 			end, opts)
-			
+
 			-- Быстрое inline редактирование
 			vim.keymap.set("n", "<leader>ai", function()
 				-- Inline редактирование текущей строки
 				vim.cmd("CodeCompanionInline")
 			end, opts)
-			
+
 			-- Toggle chat buffer
 			vim.keymap.set("n", "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", opts)
 
@@ -228,30 +228,32 @@ return {
 					vim.cmd("CodeCompanionChat /buffer") -- Slash command для добавления буфера
 				end, 200)
 			end, vim.tbl_extend("force", opts, { desc = "CodeCompanion: Full Stack Dev + Current File" }))
-			
+
 			vim.keymap.set("n", "<leader>ar", function()
 				vim.cmd("CodeCompanionChat @{code_reviewer}")
 				vim.defer_fn(function()
 					vim.cmd("CodeCompanionChat /buffer") -- Slash command для добавления буфера
 				end, 200)
 			end, vim.tbl_extend("force", opts, { desc = "CodeCompanion: Code Reviewer + Current File" }))
-			
+
 			vim.keymap.set("n", "<leader>ab", function()
 				vim.cmd("CodeCompanionChat @{bug_hunter}")
 				vim.defer_fn(function()
 					vim.cmd("CodeCompanionChat /buffer") -- Slash command для добавления буфера
 				end, 200)
 			end, vim.tbl_extend("force", opts, { desc = "CodeCompanion: Bug Hunter + Current File" }))
-			
+
 			-- Дополнительные команды с контекстом проекта
 			vim.keymap.set("n", "<leader>ap", function()
 				-- Анализ всего проекта
-				vim.cmd("CodeCompanionChat @{full_stack_dev} Проанализируй весь проект и предложи улучшения")
+				vim.cmd(
+					"CodeCompanionChat @{full_stack_dev} Проанализируй весь проект и предложи улучшения"
+				)
 				vim.defer_fn(function()
 					vim.cmd("CodeCompanionChat /file") -- Slash command для добавления файлов проекта
 				end, 200)
 			end, vim.tbl_extend("force", opts, { desc = "CodeCompanion: Project Analysis" }))
-			
+
 			vim.keymap.set("n", "<leader>at", function()
 				-- Чат с контекстом текущего файла
 				vim.cmd("CodeCompanionChat")
@@ -259,13 +261,13 @@ return {
 					vim.cmd("CodeCompanionChat /buffer") -- Slash command для добавления буфера
 				end, 200)
 			end, vim.tbl_extend("force", opts, { desc = "CodeCompanion: Chat + Current File" }))
-			
+
 			-- Специальные inline команды для применения изменений
 			vim.keymap.set("n", "<leader>ae", function()
 				-- Применить все предложенные изменения
 				vim.cmd("CodeCompanionInline ApplyAll")
 			end, vim.tbl_extend("force", opts, { desc = "CodeCompanion: Apply All Changes" }))
-			
+
 			vim.keymap.set("n", "<leader>ar", function()
 				-- Отклонить все предложенные изменения
 				vim.cmd("CodeCompanionInline RejectAll")

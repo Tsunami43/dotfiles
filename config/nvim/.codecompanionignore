@@ -1,7 +1,5 @@
-# CodeCompanion игнорирование файлов
-# Этот файл определяет, какие файлы и папки игнорировать при отправке контекста в AI
 
-# Системные файлы
+# System files
 .DS_Store
 .git/
 *.log
@@ -10,14 +8,14 @@
 *.swo
 *~
 
-# Файлы зависимостей
+# Dep files
 node_modules/
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
 composer.lock
 
-# Сборки и дистрибутивы
+# build files
 dist/
 build/
 out/
@@ -25,21 +23,21 @@ target/
 *.min.js
 *.min.css
 
-# Переменные окружения
+# env files
 .env
 .env.local
 .env.production
 .env.development
 .env.test
 
-# Cache и временные файлы
+# Cache 
 .cache/
 .npm/
 .vscode/
 .idea/
 *.cache
 
-# Python специфичные
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -56,17 +54,17 @@ venv/
 .venv/
 *.egg-info/
 
-# JavaScript/Node специфичные
+# JavaScript/Node
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# Rust специфичные
+# Rust
 target/
 Cargo.lock
 
-# Go специфичные
+# Go
 vendor/
 *.exe
 *.exe~
@@ -74,7 +72,7 @@ vendor/
 *.so
 *.dylib
 
-# Java специфичные
+# Java
 *.class
 *.jar
 *.war
@@ -82,20 +80,20 @@ vendor/
 *.nar
 target/
 
-# C/C++ специфичные
+# C/C++
 *.o
 *.a
 *.so
 *.exe
 *.out
 
-# Архивы
+# Archive
 *.zip
 *.tar.gz
 *.rar
 *.7z
 
-# Медиа файлы (обычно не нужны для анализа кода)
+# Media
 *.jpg
 *.jpeg
 *.png
@@ -113,18 +111,18 @@ target/
 # *.txt
 # docs/
 
-# Базы данных
+# Databases
 *.sqlite
 *.db
 *.sqlite3
 
-# Конфигурационные файлы IDE
+# ide
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
-# Тестовые данные
+# text
 test-results/
 coverage/
 *.coverage

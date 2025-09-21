@@ -84,7 +84,6 @@ alias vi="nvim"
 alias vim="nvim"
 alias zshconf="nvim ~/dotfiles/.zshrc"
 alias hosts="nvim ~/.ssh/config"
-alias tmux="tmux -f $TMUX_CONF"
 alias neofetch="fastfetch"
 
 # Docker alias for Kali Linux container
@@ -102,3 +101,15 @@ export PATH="$HOME/.pyenv/shims:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+
+tmux() {
+  if [ $# -eq 0 ]; then
+    NAMES_FILE="$HOME/.config/tmux/session_names.txt"
+    # Берём случайную строку без shuf
+    LINES=($(<"$NAMES_FILE"))
+    SESSION_NAME=${LINES[$((RANDOM % ${#LINES[@]} + 1))]}
+    command tmux new-session -s "$SESSION_NAME"
+  else
+    command tmux "$@"
+  fi
+}

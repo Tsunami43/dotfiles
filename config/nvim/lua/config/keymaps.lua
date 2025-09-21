@@ -45,7 +45,3 @@ vim.keymap.set("i", "<C-s>", "<Esc><cmd>w<CR>a", opts) -- Save in insert mode
 
 -- Clear search highlight on Esc (but keep other Esc functionality)
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", opts) -- Clear search highlight
-
--- Neo-tree toggle
-vim.keymap.set("n", "<C-n>", "<cmd>Neotree toggle<CR>", opts) -- Toggle file explorer (Ctrl+N)
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree focus<CR>", opts) -- Focus file explorer

@@ -9,7 +9,7 @@ shell-integration-features = title
 
 
 # Keybinds
-keybind = super+r=reload_config
+keybind = ctrl+r=reload_config
 
 
 # Theme
@@ -43,7 +43,6 @@ confirm-close-surface = false
 
 # Other
 link-url = true
-
 
 # Tmux startup
 command = "/bin/zsh -c '~/.config/ghostty/start-tmux.sh'"

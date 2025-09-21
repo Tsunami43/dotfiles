@@ -6,3 +6,5 @@ require("config.lazy")
 
 -- Load key mappings
 require("config.keymaps")
+
+vim.cmd.colorscheme("vesper")

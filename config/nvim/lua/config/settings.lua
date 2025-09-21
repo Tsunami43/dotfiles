@@ -36,3 +36,6 @@ vim.opt.timeoutlen = 500 -- Time to wait for key sequence
 vim.opt.swapfile = false -- Disable swap file creation
 vim.opt.backup = false -- Disable backup file creation
 vim.opt.undofile = true -- Save undo history between sessions
+
+-- Remove ~ in end file
+vim.opt.fillchars = { eob = " " }
