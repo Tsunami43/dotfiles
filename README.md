@@ -1,4 +1,4 @@
-![My Dotfiles](https://media1.tenor.com/m/JPX5iWzkrfQAAAAd/akudama-drive-anime.gif)
+![My Dotfiles](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHBxN2dsNGFnOGlidGZpamJ3cTlkOHQ5aXRyOHFucW1pYTBrNmdudSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wwg1suUiTbCY8H8vIA/giphy.gif)
 
 ---
 
