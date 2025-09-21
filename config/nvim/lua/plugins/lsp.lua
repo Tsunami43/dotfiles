@@ -1,7 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
 	config = function()
-		local lspconfig = vim.lsp.config
+		local lspconfig = require("lspconfig")
 		-- Configure diagnostics
 		vim.diagnostic.config({
 			virtual_text = false, -- Show diagnostics as virtual text
