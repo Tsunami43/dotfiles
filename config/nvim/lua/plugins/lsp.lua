@@ -1,5 +1,4 @@
 return {
-
 	"neovim/nvim-lspconfig",
 	config = function()
 		local lspconfig = require("lspconfig")
@@ -47,6 +46,19 @@ return {
 		lspconfig.ts_ls.setup({ on_attach = on_attach }) -- npm install -g pyright
 		lspconfig.gopls.setup({ on_attach = on_attach }) -- go install golang.org/x/tools/gopls@latest
 		lspconfig.rust_analyzer.setup({ on_attach = on_attach }) -- rustup component add rust-analyzer
+
+		-- Elixir LSP
+		lspconfig.elixirls.setup({
+			cmd = { vim.fn.expand("/Users/mentor/development/elixir-ls/release/language_server.sh") }, -- https://github.com/elixir-lsp/elixir-ls.git
+			on_attach = on_attach,
+			root_dir = lspconfig.util.root_pattern("mix.exs", ".git"),
+			settings = {
+				elixirLS = {
+					dialyzerEnabled = true,
+					fetchDeps = false,
+				},
+			},
+		})
 
 		-- Python formatting
 		vim.api.nvim_create_autocmd("BufWritePost", {
@@ -143,7 +155,7 @@ return {
 
 		-- Formatting JavaScript typescript html css -- npm install -g prettier
 		vim.api.nvim_create_autocmd("BufWritePost", {
-			pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.html", "*.css" },
+			pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.html", "*.css", "*.json" },
 			callback = function()
 				local filepath = vim.api.nvim_buf_get_name(0)
 				if vim.fn.executable("prettier") == 1 then
@@ -155,6 +167,17 @@ return {
 					vim.lsp.buf.format({ async = false })
 					print("Formatted with LSP")
 				end
+				vim.cmd("checktime")
+			end,
+		})
+
+		-- Elixir
+		vim.api.nvim_create_autocmd("BufWritePost", {
+			pattern = { "*.ex", "*.exs" },
+			callback = function()
+				local filepath = vim.api.nvim_buf_get_name(0)
+				vim.fn.system(string.format("mix format %q", filepath))
+				print("Formatted with mix format")
 				vim.cmd("checktime")
 			end,
 		})
