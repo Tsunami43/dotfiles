@@ -61,11 +61,9 @@ export TMUX_CONF="$HOME/.config/tmux/tmux.conf"
 # ───────────────────────────────────────────────
 # ⚙️ Useful Aliases & Functions
 
-# Neovim config shortcut
-function nvimconf() {
-  cd "$PATH_TO_DOTFILES/config/nvim" && nvim
-}
-
+# # Neovim/Helix config shortcut
+# alias hxconf="hx $HOME/.config/helix"
+# alias nvconf="nvim $HOME/.config/nvim"
 
 # Yazi file manager wrapper (remembers last directory)
 function yy() {
@@ -78,7 +76,7 @@ function yy() {
 }
 
 # Replacements and shortcuts
-alias dotconf="cd $PATH_TO_DOTFILES"
+alias dotconf="nvim $PATH_TO_DOTFILES"
 alias cat="bat --style=plain"
 alias vi="nvim"
 alias vim="nvim"
@@ -94,7 +92,7 @@ alias ls="eza -l --tree --level=1 --icons=always --no-user --no-permissions"
 
 # AsyncAPI CLI Autocomplete
 
-ASYNCAPI_AC_ZSH_SETUP_PATH=~./Library/Caches/@asyncapi/cli/autocomplete/zsh_setup && test -f $ASYNCAPI_AC_ZSH_SETUP_PATH && source $ASYNCAPI_AC_ZSH_SETUP_PATH; # asyncapi autocomplete setup
+ASYNCAPI_AC_ZSH_SETUP_PATH=~/Library/Caches/@asyncapi/cli/autocomplete/zsh_setup && test -f $ASYNCAPI_AC_ZSH_SETUP_PATH && source $ASYNCAPI_AC_ZSH_SETUP_PATH; # asyncapi autocomplete setup
 
 # pyenv
 export PATH="$HOME/.pyenv/shims:$PATH"
