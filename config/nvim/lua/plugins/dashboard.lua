@@ -36,7 +36,7 @@ return {
 						key = "e",
 						keymap = "e",
 						key_hl = "Number",
-						action = ":Telescope file_browser",
+						action = ":Yazi",
 					},
 					{
 						icon = "📁 ",

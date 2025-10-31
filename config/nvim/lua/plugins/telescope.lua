@@ -118,7 +118,7 @@ return {
 			builtin.live_grep()
 		end, { noremap = true, silent = true, desc = "Search text" })
 
-		vim.keymap.set("n", "<leader>e", ":Telescope file_browser<CR>", { desc = "Toggle File Explore" })
+		-- vim.keymap.set("n", "<leader>e", ":Telescope file_browser<CR>", { desc = "Toggle File Explore" })
 
 		vim.keymap.set("n", "<leader>ff", function()
 			builtin.find_files()
