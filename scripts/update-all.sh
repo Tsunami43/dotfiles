@@ -61,17 +61,6 @@ update_omz() {
   fi
 }
 
-# Function to update Poetry
-update_poetry() {
-  if command -v poetry >/dev/null 2>&1; then
-    echo -e "${GREEN}Updating Poetry...${NC}"
-    poetry self update
-    echo -e "${GREEN}Poetry updated.${NC}"
-  else
-    echo -e "${YELLOW}Poetry not found, skipping update.${NC}"
-  fi
-}
-
 # Function to update 'uv' utility (if applicable)
 update_uv() {
   if command -v uv >/dev/null 2>&1; then
@@ -88,8 +77,6 @@ clear_cache
 cleanup_docker
 update_homebrew
 update_omz
-update_poetry
 update_uv
 
 echo -e "${YELLOW}All tasks completed.${NC}"
-

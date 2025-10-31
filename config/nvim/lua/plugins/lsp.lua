@@ -49,7 +49,7 @@ return {
 
 		-- Elixir LSP
 		lspconfig.elixirls.setup({
-			cmd = { vim.fn.expand("/Users/mentor/development/elixir-ls/release/language_server.sh") }, -- https://github.com/elixir-lsp/elixir-ls.git
+			cmd = { vim.fn.expand("~./development/elixir-ls/release/language_server.sh") }, -- https://github.com/elixir-lsp/elixir-ls.git
 			on_attach = on_attach,
 			root_dir = lspconfig.util.root_pattern("mix.exs", ".git"),
 			settings = {
