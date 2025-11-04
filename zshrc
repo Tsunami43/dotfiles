@@ -45,6 +45,8 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # poetry
 export PATH="$HOME/.local/bin:$PATH"
 
+export EDITOR=hx
+
 # ───────────────────────────────────────────────
 # 🖥️ Terminal Enhancements
 
@@ -64,6 +66,7 @@ export TMUX_CONF="$HOME/.config/tmux/tmux.conf"
 # # Neovim/Helix config shortcut
 # alias hxconf="hx $HOME/.config/helix"
 # alias nvconf="nvim $HOME/.config/nvim"
+alias avante='nvim -c "lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)"'
 
 # Yazi file manager wrapper (remembers last directory)
 function yy() {
@@ -111,3 +114,12 @@ tmux() {
     command tmux "$@"
   fi
 }
+
+function Resume {
+  fg
+  zle push-input
+  BUFFER=""
+  zle accept-line
+}
+zle -N Resume
+bindkey "^Z" Resume
