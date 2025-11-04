@@ -1,5 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
+	version = "v2.*",
 	config = function()
 		local lspconfig = require("lspconfig")
 		-- Configure diagnostics
