@@ -45,8 +45,9 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # poetry
 export PATH="$HOME/.local/bin:$PATH"
 
-export EDITOR=hx
-
+export EDITOR="nvim"
+export VISUAL="nvim"
+export GIT_EDITOR="nvim"
 # ───────────────────────────────────────────────
 # 🖥️ Terminal Enhancements
 
@@ -88,7 +89,7 @@ alias hosts="nvim ~/.ssh/config"
 alias neofetch="fastfetch"
 
 # Docker alias for Kali Linux container
-alias kali="docker run -it leplusorg/kali bin/bash"
+alias kali="docker run -it leplusorg/kali bash"
 
 # Fancy ls
 alias ls="eza -l --tree --level=1 --icons=always --no-user --no-permissions"
@@ -123,3 +124,4 @@ function Resume {
 }
 zle -N Resume
 bindkey "^Z" Resume
+

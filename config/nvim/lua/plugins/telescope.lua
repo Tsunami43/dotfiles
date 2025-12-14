@@ -131,5 +131,9 @@ return {
 		vim.keymap.set("n", "<leader>dt", function()
 			builtin.diagnostics()
 		end, { noremap = true, silent = true, desc = "Diagnostics Toggle" })
+
+		vim.keymap.set("n", "<leader>g", function()
+			builtin.git_status()
+		end, { noremap = true, silent = true, desc = "Git status Toggle" })
 	end,
 }

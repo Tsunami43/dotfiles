@@ -1,6 +1,9 @@
 #!/bin/bash
 
 find . -type f \
+  ! -path '*/fonts/*' \
+  ! -path './.docker/*' \
+  ! -path '.docker' \
   ! -path '*.txt' \
   ! -path '*.json' \
   ! -path '*.MOV' \

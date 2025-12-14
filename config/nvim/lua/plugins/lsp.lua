@@ -44,6 +44,13 @@ return {
 		-- Setup language servers (install manually)
 		lspconfig.lua_ls.setup({ on_attach = on_attach }) -- brew install lua-language-server
 		lspconfig.pyright.setup({ on_attach = on_attach }) -- npm install -g typescript-language-server typescript
+		-- lspconfig.ruff.setup({
+		-- 	init_options = {
+		-- 		settings = {
+		-- 			-- Ruff language server settings go here
+		-- 		},
+		-- 	},
+		-- })
 		lspconfig.ts_ls.setup({ on_attach = on_attach }) -- npm install -g pyright
 		lspconfig.gopls.setup({ on_attach = on_attach }) -- go install golang.org/x/tools/gopls@latest
 		lspconfig.rust_analyzer.setup({ on_attach = on_attach }) -- rustup component add rust-analyzer
@@ -59,6 +66,14 @@ return {
 					fetchDeps = false,
 				},
 			},
+		})
+
+		-- Swift (sourcekit-lsp)
+		lspconfig.sourcekit.setup({
+			on_attach = on_attach,
+			cmd = { "sourcekit-lsp" },
+			filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" },
+			root_dir = lspconfig.util.root_pattern("Package.swift", ".git"),
 		})
 
 		-- Python formatting
