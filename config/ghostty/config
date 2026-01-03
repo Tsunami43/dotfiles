@@ -2,36 +2,31 @@
 auto-update = check
 auto-update-channel = stable
 
-
 # Shell
-shell-integration = zsh
+shell-integration = fish
 shell-integration-features = title
-
 
 # Keybinds
 keybind = ctrl+r=reload_config
 
-
 # Theme
-config-file = themes/vesper.conf
-
+theme = tokyonight_night
 
 # Font
+font-size = 13
+adjust-cell-height = 15%
+window-padding-balance = true
 font-family = JetBrainsMonoNL Nerd Font 
-font-size = 16
-font-thicken = true
-
 
 # Cursor
 cursor-style = block
 cursor-style-blink = false
 cursor-invert-fg-bg = true
-
     
 # Window
 window-decoration = true
-window-padding-x = 10
-window-padding-y = 5
+window-padding-x = 0
+window-padding-y = 0
 window-padding-balance = true
 fullscreen = false
 macos-non-native-fullscreen = false
