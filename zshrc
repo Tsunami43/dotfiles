@@ -125,3 +125,5 @@ function Resume {
 zle -N Resume
 bindkey "^Z" Resume
 
+
+. "$HOME/.local/bin/env"
