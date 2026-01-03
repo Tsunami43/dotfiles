@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+<defs>
+<image id="source-106" x="0" y="0" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABMElEQVQ4jZ2TPU7DQBBGn8k6CRIIGkhSIEQBLRXCEog46X0AbhDgCljKaejtFI5tRAESP84xXNiuFhq6KDQ2ckyWEKZczftm5tsZUMca0ABawFkQBL6UUg6Hw2tgF9ABbRncBi48z3ue5TGZTB6AfaCpEpiDHcd5LOAsy6RlWZfAjqoDJZym6Xu/3x8AB8B6njsXWhl2XfepAl8Bh8AGUKtW14B6bs7KMPnjFnAyGo2+206S5MM0zRvgCNhUwUXre47j3BVwHMefhmHcAse5uFCZVhYqJ8ym02k1Xxk1YFvX9VPf919WHaGoXgdaQoie53lvq5pYjNMAOkKI3ng8fv2vSBPoAN0F3/nrIlU7aVdF/rLKP0SEEGbZ2CiK7llyTItEzsMwDKWU0rbtAaVz/gL2deVzEiXNDQAAAABJRU5ErkJggg=="/>
+<clipPath id="clip-0">
+<rect x="0" y="0" width="16" height="16"/>
+</clipPath>
+<g id="source-108" clip-path="url(#clip-0)">
+<use xlink:href="#source-106"/>
+</g>
+</defs>
+<use xlink:href="#source-108"/>
+</svg>
