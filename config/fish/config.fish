@@ -38,6 +38,8 @@ end
 # Homebrew
 set -gx HOMEBREW_NO_ENV_HINTS 1
 
+
+# Yazi
 function yy
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     command yazi $argv --cwd-file="$tmp"
@@ -46,3 +48,7 @@ function yy
     end
     rm -f -- "$tmp"
 end
+
+
+# Zoxide
+zoxide init fish | source
