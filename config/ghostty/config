@@ -19,7 +19,8 @@ window-padding-balance = true
 font-family = JetBrainsMonoNL Nerd Font 
 
 # Cursor
-cursor-style = block
+cursor-style = bar
+adjust-cursor-thickness = 5
 cursor-style-blink = false
 cursor-invert-fg-bg = true
     
