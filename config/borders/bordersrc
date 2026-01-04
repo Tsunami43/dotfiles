@@ -3,7 +3,8 @@
 options=( 
     style=round 
     width=5.0 
-    hidpi=true 
+    # hidpi=true 
+    
     # TokyoNight colors
     active_color=0xff7aa2f7     # blue
     inactive_color=0xff3b4261   # dark gray (bg_highlight)
