@@ -18,10 +18,18 @@ set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
 starship init fish | source
 
 # Alias
+# vim/nvim
 alias vi="nvim"
 alias vim="nvim"
+alias nv="nvim"
+# neofetch
 alias neofetch="fastfetch"
+alias nf="fastfetch"
+# lazygit
+alias lg="lazygit"
+# eza/ls
 alias ls="eza -l --tree --level=1 --icons=always --no-user --no-permissions"
+# fast open
 alias hosts="nvim ~/.ssh/config"
 
 # Tmux
