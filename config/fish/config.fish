@@ -22,6 +22,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias neofetch="fastfetch"
 alias ls="eza -l --tree --level=1 --icons=always --no-user --no-permissions"
+alias hosts="nvim ~/.ssh/config"
 
 # Tmux
 function tmux
@@ -38,17 +39,15 @@ end
 # Homebrew
 set -gx HOMEBREW_NO_ENV_HINTS 1
 
-
 # Yazi
 function yy
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     command yazi $argv --cwd-file="$tmp"
-    if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
         builtin cd -- "$cwd"
     end
     rm -f -- "$tmp"
 end
-
 
 # Zoxide
 zoxide init fish | source
