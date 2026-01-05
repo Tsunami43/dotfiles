@@ -1,10 +1,2 @@
--- Load basic settings
-require("config.settings")
-
--- Load plugin manager
+-- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
-
--- Load key mappings
-require("config.keymaps")
-
-vim.cmd.colorscheme("vesper")
