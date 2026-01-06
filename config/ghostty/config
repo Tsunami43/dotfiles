@@ -13,7 +13,7 @@ keybind = ctrl+r=reload_config
 theme = tokyonight_night
 
 # Font
-font-size = 13
+font-size = 12
 adjust-cell-height = 15%
 window-padding-balance = true
 font-family = JetBrainsMonoNL Nerd Font 
