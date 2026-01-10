@@ -7,6 +7,7 @@ set -gx PATH $HOME/bin $PATH
 set -gx PATH $PATH (go env GOPATH)/bin
 set -gx PATH $HOME/.local/bin $PATH
 set -gx PATH $HOME/.pyenv/shims $PATH
+set -gx PATH $HOME/develop/flutter/bin $PATH
 
 # Editor
 set -gx EDITOR nvim
