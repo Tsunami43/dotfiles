@@ -4,13 +4,58 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Map Cmd+H/J/K/L to arrow keys",
+                        "description": "Map Cmd+H/J/K/L to Ctrl+H/J/K/L for tmux",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": ["command"],
+                                        "mandatory": ["command"]
+                                    }
+                                },
+                                "to": [{ "key_code": "h", "modifiers": ["control"] }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["command"]
+                                    }
+                                },
+                                "to": [{ "key_code": "j", "modifiers": ["control"] }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["command"]
+                                    }
+                                },
+                                "to": [{ "key_code": "k", "modifiers": ["control"] }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["command"]
+                                    }
+                                },
+                                "to": [{ "key_code": "l", "modifiers": ["control"] }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Map Cmd+Shift+H/J/K/L to arrow keys",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -21,7 +66,7 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": ["command"],
+                                        "mandatory": ["command", "shift"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -32,7 +77,7 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": ["command"],
+                                        "mandatory": ["command", "shift"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -43,7 +88,7 @@
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": ["command"],
+                                        "mandatory": ["command", "shift"],
                                         "optional": ["any"]
                                     }
                                 },
