@@ -1,0 +1,10 @@
+# Mount manager (plugin mount.yazi): press M to list disks, Enter to mount & jump in
+[[mgr.prepend_keymap]]
+on   = "M"
+run  = "plugin mount"
+desc = "Mount manager"
+# A Yazi plugin that makes filters smarter: continuous filtering, automatically enter unique directory, open file on submitting.
+[[mgr.prepend_keymap]]
+on   = "f"
+run  = "plugin smart-filter"
+desc = "Smart filter"

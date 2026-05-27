@@ -1,0 +1,22 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "be524fb"
+hash = "e3260d0b1feded8c8e3ae3afa1169e30"
+
+[[plugin.deps]]
+use = "macydnah/office"
+rev = "41ebef8"
+hash = "5805affd3ae8adcb3c72b6997d21c0a6"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:jump-to-char"
+rev = "c2c16c8"
+hash = "7a4b4237223aaa94e589d1c01a23542a"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "c2c16c8"
+hash = "c887903a63a2ff520081b6d90a4b3392"
+
+[flavor]
+deps = []

@@ -1,0 +1,33 @@
+[opener]
+edit = [
+  { run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" },
+]
+vex = [
+  { run = '~/go/bin/vex-tui "$1"', block = true, desc = "vex-tui" },
+]
+
+[open]
+prepend_rules = [
+  { url = "*.xlsx", use = "vex" },
+  { url = "*.xlsm", use = "vex" },
+  { url = "*.xls",  use = "vex" },
+  { url = "*.csv",  use = "vex" },
+  { mime = "text/csv", use = "vex" },
+  { mime = "application/vnd.ms-excel", use = "vex" },
+  { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = "vex" },
+]
+
+[plugin]
+prepend_preloaders = [
+  { mime = "application/vnd.openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/vnd.oasis.opendocument.*",            run = "office" },
+  { mime = "application/vnd.ms-*",                            run = "office" },
+  { mime = "application/msword",                              run = "office" },
+]
+
+prepend_previewers = [
+  { mime = "application/vnd.openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/vnd.oasis.opendocument.*",            run = "office" },
+  { mime = "application/vnd.ms-*",                            run = "office" },
+  { mime = "application/msword",                              run = "office" },
+]
