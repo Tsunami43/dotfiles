@@ -5,16 +5,34 @@ edit = [
 vex = [
   { run = '~/go/bin/vex-tui "$1"', block = true, desc = "vex-tui" },
 ]
+libreoffice = [
+  { run = 'setsid -f libreoffice "$@" >/dev/null 2>&1', desc = "LibreOffice", orphan = true, for = "unix" },
+]
+sqlit = [
+  { run = 'sqlit connect sqlite --file-path "$1"', block = true, desc = "sqlit (TUI)" },
+]
+sqlite = [
+  { run = 'sqlite3 "$1"', block = true, desc = "sqlite3 shell" },
+]
+sqlite-sql = [
+  { run = 'sqlite3 :memory: -cmd ".read $1"', block = true, desc = "sqlite3 :memory: (.read script)" },
+]
 
 [open]
 prepend_rules = [
-  { url = "*.xlsx", use = "vex" },
-  { url = "*.xlsm", use = "vex" },
-  { url = "*.xls",  use = "vex" },
-  { url = "*.csv",  use = "vex" },
-  { mime = "text/csv", use = "vex" },
-  { mime = "application/vnd.ms-excel", use = "vex" },
-  { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = "vex" },
+  { url = "*.xlsx", use = [ "vex", "libreoffice" ] },
+  { url = "*.xlsm", use = [ "vex", "libreoffice" ] },
+  { url = "*.xls",  use = [ "vex", "libreoffice" ] },
+  { url = "*.csv",  use = [ "vex", "libreoffice" ] },
+  { mime = "text/csv", use = [ "vex", "libreoffice" ] },
+  { mime = "application/vnd.ms-excel", use = [ "vex", "libreoffice" ] },
+  { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = [ "vex", "libreoffice" ] },
+  { url = "*.db",      use = [ "sqlit", "sqlite", "edit" ] },
+  { url = "*.sqlite",  use = [ "sqlit", "sqlite", "edit" ] },
+  { url = "*.sqlite3", use = [ "sqlit", "sqlite", "edit" ] },
+  { url = "*.sql",     use = [ "edit", "sqlite-sql" ] },
+  { mime = "application/vnd.sqlite3",        use = [ "sqlit", "sqlite", "edit" ] },
+  { mime = "application/x-sqlite3",          use = [ "sqlit", "sqlite", "edit" ] },
 ]
 
 [plugin]
