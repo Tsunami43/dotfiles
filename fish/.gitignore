@@ -1,0 +1,9 @@
+# Universal variables: local state, may contain paths and tokens
+fish_variables
+
+# Command history
+fish_history
+fish_*_hist*
+
+# Generated caches
+generated_completions/

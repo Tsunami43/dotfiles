@@ -1,0 +1,3 @@
+# TPM-cloned plugins (restored via prefix + I)
+plugins/
+!plugins/.keep

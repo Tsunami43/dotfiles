@@ -1,0 +1,74 @@
+# === Fully private application data ===
+# Electron apps: cookies, session tokens, local cache, IndexedDB
+Slack/
+discord/
+obsidian/
+
+# Firefox: passwords, history, cookies, profiles — keep only user.js
+mozilla/*
+!mozilla/firefox/
+mozilla/firefox/*
+!mozilla/firefox/user.js
+
+# Binary GNOME settings database with user state
+dconf/
+
+# Contains PulseAudio auth cookie
+pulse/
+
+# LibreOffice profile: recent docs, dictionaries, history
+libreoffice/
+
+# Local tool cache/state
+procps/
+yay/
+quickshell/
+
+# Claude Code local settings (settings.local.json)
+.claude/
+
+# Contains lastVisited paths from Qt file dialogs
+QtProject.conf
+
+# DB client (Sqlit): credentials.json with real passwords, connections.json
+# with prod hosts, queries/ with production SQL
+sqlit/
+
+# === Generic cache/state/secret patterns ===
+**/Cache/
+**/Code Cache/
+**/GPUCache/
+**/DawnGraphiteCache/
+**/DawnWebGPUCache/
+**/Crashpad/
+**/blob_storage/
+**/Service Worker/
+**/Session Storage/
+**/Local Storage/
+**/IndexedDB/
+**/Local State
+**/Cookies
+**/Cookies-journal
+**/*.sqlite
+**/*.sqlite-journal
+**/*.sqlite-wal
+**/*.sqlite-shm
+**/*.ldb
+**/*.log
+**/*.tmp
+**/*.swp
+**/*.swo
+**/*~
+**/*.bak
+**/*.bak-*
+**/.DS_Store
+
+# Secrets and credentials
+**/secrets/
+**/*token*
+**/*secret*
+**/*.pem
+**/*.key
+**/*.env
+**/.env
+**/.env.*
