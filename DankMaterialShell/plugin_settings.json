@@ -1,0 +1,15 @@
+{
+  "screenRecorder": {
+    "enabled": false,
+    "captureSource": "region"
+  },
+  "screenCaptureToolbar": {
+    "enabled": true,
+    "recordMic": false,
+    "videoCustomPath": "~/Videos/Screencs",
+    "stdout": true
+  },
+  "screenCaptureButton": {
+    "enabled": true
+  }
+}

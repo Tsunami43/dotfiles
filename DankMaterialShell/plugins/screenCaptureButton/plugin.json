@@ -1,0 +1,11 @@
+{
+    "id": "screenCaptureButton",
+    "name": "Screen Capture Button",
+    "description": "Bar button that toggles the screenCaptureToolbar plugin via dms ipc",
+    "version": "1.0.0",
+    "author": "local",
+    "type": "widget",
+    "capabilities": ["dankbar-widget"],
+    "component": "./ScreenCaptureButton.qml",
+    "icon": "photo_camera"
+}
