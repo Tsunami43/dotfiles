@@ -1,0 +1,91 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+# Creamy Schedule palette
+# primary            #2ba8b0   bright teal
+# primaryContainer   #125a61
+# surfaceCH          #1f3e45
+# surfaceCH-high     #183238
+# surfaceContainer   #12262b
+# background         #0d1b1f
+# cream text         #ebe6c2
+# muted cream        #a8a07c
+# warning            #d9a141
+# error              #de5249
+
+format = """
+[░▒▓](#2ba8b0)\
+[  ](bg:#2ba8b0 fg:#051617)\
+[](bg:#125a61 fg:#2ba8b0)\
+$directory\
+[](fg:#125a61 bg:#1f3e45)\
+$git_branch\
+$git_status\
+[](fg:#1f3e45 bg:#183238)\
+$nodejs\
+$rust\
+$golang\
+$php\
+$python\
+[](fg:#183238 bg:#12262b)\
+$time\
+[ ](fg:#12262b)\
+\n$character"""
+
+[directory]
+style = "fg:#ebe6c2 bg:#125a61"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#1f3e45"
+format = '[[ $symbol $branch ](fg:#2ba8b0 bg:#1f3e45)]($style)'
+
+[git_status]
+style = "bg:#1f3e45"
+format = '[[($all_status$ahead_behind )](fg:#d9a141 bg:#1f3e45)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#183238"
+format = '[[ $symbol ($version) ](fg:#2ba8b0 bg:#183238)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#183238"
+format = '[[ $symbol ($version) ](fg:#2ba8b0 bg:#183238)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#183238"
+format = '[[ $symbol ($version) ](fg:#2ba8b0 bg:#183238)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#183238"
+format = '[[ $symbol ($version) ](fg:#2ba8b0 bg:#183238)]($style)'
+
+[python]
+symbol = ""
+style = "bg:#183238"
+format = '[[ $symbol ($version) ](fg:#2ba8b0 bg:#183238)]($style)'
+
+[time]
+disabled = false
+time_format = "%T"
+style = "bg:#12262b"
+format = '[[  $time ](fg:#ebe6c2 bg:#12262b)]($style)'
+
+[character]
+success_symbol = "[❯](bold fg:#2ba8b0)"
+error_symbol = "[❯](bold fg:#de5249)"
+vimcmd_symbol = "[❮](bold fg:#d9a141)"
