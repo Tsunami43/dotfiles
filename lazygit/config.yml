@@ -1,0 +1,8 @@
+# ~/.config/lazygit/config.yml
+editor:
+  command: "/opt/homebrew/bin/nvim"
+  args: ["--wait"]
+
+gui:
+  nerdFontsVersion: "3"   # or "2"
+  showFileIcons: true
