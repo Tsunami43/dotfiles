@@ -48,7 +48,7 @@ unfocused-split-fill = #44464f
 gtk-titlebar = false
 
 # Auto-attach tmux session "main" on launch (creates if missing)
-command = tmux new-session -A -s main
+#command = tmux new-session -A -s main
 
 # Shell integration
 shell-integration = detect
