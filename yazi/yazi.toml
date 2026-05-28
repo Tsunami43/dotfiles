@@ -9,7 +9,7 @@ libreoffice = [
   { run = 'setsid -f libreoffice "$@" >/dev/null 2>&1', desc = "LibreOffice", orphan = true, for = "unix" },
 ]
 sqlit = [
-  { run = 'sqlit connect sqlite --file-path "$1"', block = true, desc = "sqlit (TUI)" },
+  { run = '$HOME/.local/bin/sqlit connect sqlite --file-path "$1"', block = true, desc = "sqlit (TUI)" },
 ]
 sqlite = [
   { run = 'sqlite3 "$1"', block = true, desc = "sqlite3 shell" },
