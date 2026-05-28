@@ -8,3 +8,8 @@ desc = "Mount manager"
 on   = "f"
 run  = "plugin smart-filter"
 desc = "Smart filter"
+# Show detailed file info (size, mtime, btime, owner, perms, mimetype, ...)
+[[mgr.prepend_keymap]]
+on   = "i"
+run  = "spot"
+desc = "Show file info"

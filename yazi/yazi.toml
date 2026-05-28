@@ -36,6 +36,10 @@ prepend_rules = [
 ]
 
 [plugin]
+prepend_spotters = [
+  { url = "*", run = "info" },
+]
+
 prepend_preloaders = [
   { mime = "application/vnd.openxmlformats-officedocument.*", run = "office" },
   { mime = "application/vnd.oasis.opendocument.*",            run = "office" },
