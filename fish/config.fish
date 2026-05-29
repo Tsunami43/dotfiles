@@ -10,6 +10,11 @@ set -gx PATH $HOME/.pyenv/shims $PATH
 set -gx PATH $HOME/develop/flutter/bin $PATH
 set -gx NVM_DIR $HOME/.nvm
 
+# Terminal
+# Ghostty's TERM (xterm-ghostty) is rarely present on remote hosts, which breaks
+# clear/tput/TUIs over ssh. Use a universally available TERM everywhere.
+set -gx TERM xterm-256color
+
 # Editor
 set -gx EDITOR nvim
 set -gx VISUAL nvim
