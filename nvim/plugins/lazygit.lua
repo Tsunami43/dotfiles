@@ -1,6 +1,7 @@
--- Uses plenary.nvim (already pulled in by plugins/telescope.lua) for the floating window.
+-- plenary.nvim provides the floating window helpers lazygit.nvim needs.
 vim.pack.add({
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/kdheepak/lazygit.nvim" },
 })
 
-vim.keymap.set("n", "<leader>g", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
+vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
