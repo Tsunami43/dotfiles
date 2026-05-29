@@ -1,5 +1,10 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "src": "https://github.com/Saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
+    },
     "fzf-lua": {
       "rev": "fea9eedc6894c44d44cbb772a5cd11c93b82d7a1",
       "src": "https://github.com/ibhagwan/fzf-lua"
@@ -7,6 +12,10 @@
     "fzf.vim": {
       "rev": "e5b53de3d3b402d2ef9f74da91c2bb808d0afb34",
       "src": "https://github.com/junegunn/fzf.vim"
+    },
+    "gitsigns.nvim": {
+      "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "lazygit.nvim": {
       "rev": "a04ad0dbc725134edbee3a5eea29290976695357",
