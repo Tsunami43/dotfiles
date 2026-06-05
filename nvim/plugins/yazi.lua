@@ -1,10 +1,10 @@
 vim.pack.add({
-  { src = "https://github.com/mikavilpas/yazi.nvim" },
+	{ src = "https://github.com/mikavilpas/yazi.nvim" },
 })
 
 require("yazi").setup({
-  -- We open yazi explicitly via keymaps, not as a netrw replacement.
-  open_for_directories = false,
+	-- We open yazi explicitly via keymaps, not as a netrw replacement.
+	open_for_directories = false,
 })
 
 local map = vim.keymap.set

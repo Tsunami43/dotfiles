@@ -29,18 +29,18 @@ map("n", "<leader>wV", "<cmd>split<cr>", { desc = "Split horizontally" })
 -- <Esc> in normal mode: clear search highlight and dismiss popup messages
 -- (noice cmdline / nvim-notify toasts) so one tap cleans the screen.
 map("n", "<Esc>", function()
-  vim.cmd("nohlsearch")
-  pcall(vim.cmd, "NoiceDismiss")
-  local ok, notify = pcall(require, "notify")
-  if ok then
-    notify.dismiss({ silent = true, pending = true })
-  end
+	vim.cmd("nohlsearch")
+	pcall(vim.cmd, "NoiceDismiss")
+	local ok, notify = pcall(require, "notify")
+	if ok then
+		notify.dismiss({ silent = true, pending = true })
+	end
 end, { desc = "Clear hlsearch and popups" })
 
 -- Briefly highlight yanked text for visual feedback (0.5s).
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = vim.api.nvim_create_augroup("user_yank_highlight", { clear = true }),
-  callback = function()
-    vim.hl.on_yank({ timeout = 500 })
-  end,
+	group = vim.api.nvim_create_augroup("user_yank_highlight", { clear = true }),
+	callback = function()
+		vim.hl.on_yank({ timeout = 500 })
+	end,
 })
