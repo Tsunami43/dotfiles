@@ -77,3 +77,6 @@ end
 
 # Zoxide
 zoxide init fish | source
+
+# mimocode
+fish_add_path $HOME/.mimocode/bin
