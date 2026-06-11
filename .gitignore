@@ -24,6 +24,9 @@ procps/
 yay/
 quickshell/
 
+# Next.js CLI telemetry state (anonymousId, salt)
+nextjs-nodejs/
+
 # Claude Code local settings (settings.local.json)
 .claude/
 
