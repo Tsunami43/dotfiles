@@ -1,8 +1,14 @@
 # ~/.config/lazygit/config.yml
-editor:
-  command: "/opt/homebrew/bin/nvim"
-  args: ["--wait"]
+os:
+  # Open files in the parent nvim instance via $NVIM when lazygit
+  # runs inside a nvim terminal; falls back to plain nvim otherwise.
+  editPreset: "nvim-remote"
 
 gui:
-  nerdFontsVersion: "3"   # or "2"
+  nerdFontsVersion: "3" # or "2"
   showFileIcons: true
+
+keybinding:
+  universal:
+    edit: "o"
+    openFile: "<disabled>"
