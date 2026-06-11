@@ -2,7 +2,13 @@
 os:
   # Open files in the parent nvim instance via $NVIM when lazygit
   # runs inside a nvim terminal; falls back to plain nvim otherwise.
+  # nvim-edit.sh opens the file in the parent nvim instance (via
+  # LazyGitEditFromFloat in ~/.config/nvim/plugins/lazygit.lua) or in a
+  # plain nvim outside of it. A POSIX script is used because lazygit
+  # runs commands through $SHELL, which is fish here.
   editPreset: "nvim-remote"
+  edit: '~/.config/lazygit/nvim-edit.sh {{filename}}'
+  editAtLine: '~/.config/lazygit/nvim-edit.sh {{filename}} {{line}}'
 
 gui:
   nerdFontsVersion: "3" # or "2"
