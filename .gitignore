@@ -27,6 +27,9 @@ quickshell/
 # Next.js CLI telemetry state (anonymousId, salt)
 nextjs-nodejs/
 
+# Chrome for Testing: local cache, crash reports — not config
+google-chrome-for-testing/
+
 # Claude Code local settings (settings.local.json)
 .claude/
 
@@ -65,6 +68,9 @@ sqlit/
 **/*.bak
 **/*.bak-*
 **/.DS_Store
+
+# Erlang/Elixir crash dumps
+**/erl_crash.dump
 
 # Secrets and credentials
 **/secrets/
