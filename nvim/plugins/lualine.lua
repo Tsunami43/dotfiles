@@ -4,5 +4,5 @@ vim.pack.add({
 })
 
 require('lualine').setup({
- options = {theme="ayu_dark"}
+ options = {theme="kanagawa"}
 })
