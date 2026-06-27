@@ -1,13 +1,11 @@
--- Kanagawa colorscheme: warm, painterly palette with rich treesitter support.
--- Themes: "wave" (default dark), "dragon" (darker/muted), "lotus" (light).
-vim.pack.add({
-  { src = "https://github.com/rebelot/kanagawa.nvim" },
+-- Managed by desktop-theme.py — concept: Ember — warm GitHub (white / orange / coral)
+vim.pack.add({ { src = "https://github.com/projekt0n/github-nvim-theme" } })
+
+require("github-theme").setup({
+  options = { transparent = true, styles = { comments = "italic" } },
+  palettes = { github_dark_default = {
+    blue = { base = "#ff8c7a", bright = "#ffb3a3" },
+    cyan = { base = "#ffa198", bright = "#ffbcaf" } } },
 })
 
-require("kanagawa").setup({
-  -- Keep comments low-key but everything else vivid.
-  commentStyle = { italic = true },
-  keywordStyle = { italic = false },
-})
-
-vim.cmd.colorscheme("kanagawa")
+vim.cmd.colorscheme("github_dark_default")

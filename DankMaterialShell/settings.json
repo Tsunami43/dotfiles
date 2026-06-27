@@ -1,7 +1,7 @@
 {
   "currentThemeName": "custom",
-  "currentThemeCategory": "registry",
-  "customThemeFile": "~/.config/DankMaterialShell/themes/creamySchedule/theme.json",
+  "currentThemeCategory": "custom",
+  "customThemeFile": "~/.config/DankMaterialShell/themes/ember/theme.json",
   "registryThemeVariants": {},
   "matugenScheme": "scheme-vibrant",
   "runUserMatugenTemplates": true,

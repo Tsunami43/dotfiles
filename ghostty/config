@@ -8,8 +8,8 @@ window-padding-y = 0
 # Fill sub-cell leftover with neighbor cell color (removes the dark strip under lualine)
 window-padding-color = extend
 window-padding-balance = true
-background-opacity = 1.0
-background-blur-radius = 32
+background-opacity = 0.55
+background-blur-radius = 14
 
 # Cursor Configuration
 cursor-style = block
@@ -58,5 +58,11 @@ keybind = shift+enter=text:\n
 # Rando stuff
 gtk-single-instance = true
 
-# Dank color generation
-theme = dankcolors
+# GitHub Dark with warm accents; crisp white foreground
+theme = GitHub Dark Default
+foreground = #f0f6fc
+# Warm accents
+palette = 4=#ff8c7a
+palette = 12=#ffb3a3
+palette = 6=#ffa198
+palette = 14=#ffbcaf

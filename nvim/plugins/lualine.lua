@@ -4,5 +4,6 @@ vim.pack.add({
 })
 
 require('lualine').setup({
- options = {theme="kanagawa"}
+ -- "auto" follows the active colorscheme so it stays in sync on theme swaps.
+ options = {theme="auto"}
 })
