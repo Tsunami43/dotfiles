@@ -80,3 +80,7 @@ zoxide init fish | source
 
 # mimocode
 fish_add_path $HOME/.mimocode/bin
+
+# >>> grok installer >>>
+fish_add_path $HOME/.grok/bin
+# <<< grok installer <<<

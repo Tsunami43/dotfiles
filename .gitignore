@@ -3,6 +3,8 @@
 Slack/
 discord/
 obsidian/
+# Hydra game launcher (Electron): caches, DBs, logs, downloaded redist installers
+hydralauncher/
 
 # Firefox: passwords, history, cookies, profiles — keep only user.js
 mozilla/*
@@ -36,6 +38,12 @@ google-chrome-for-testing/
 # Contains lastVisited paths from Qt file dialogs
 QtProject.conf
 
+# Machine-specific local path only
+PortProton.conf
+
+# Hardhat local state: vars.json holds private keys / API tokens
+hardhat-nodejs/
+
 # DB client (Sqlit): credentials.json with real passwords, connections.json
 # with prod hosts, queries/ with production SQL
 sqlit/
@@ -67,6 +75,7 @@ sqlit/
 **/*~
 **/*.bak
 **/*.bak-*
+**/*.bak.*
 **/.DS_Store
 
 # Erlang/Elixir crash dumps

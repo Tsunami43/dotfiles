@@ -25,6 +25,26 @@ vim.lsp.config("basedpyright", {
 })
 vim.lsp.enable("basedpyright")
 
+local python_indent_group = vim.api.nvim_create_augroup("python_indent", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = python_indent_group,
+  pattern = "python",
+  callback = function()
+    vim.opt_local.expandtab = true
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.tabstop = 4
+  end,
+})
+
+-- Formatters cannot parse a file with mixed indentation, so normalize tabs first.
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = python_indent_group,
+  pattern = "*.py",
+  command = "silent! retab",
+})
+
 -- Resolve a Python tool: prefer the nearest .venv/bin/<tool> walking up from
 -- the file, fall back to whatever is on the system PATH. This lets `uv add ruff`
 -- inside a project just work without launching nvim via `uv run`.
