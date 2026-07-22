@@ -24,7 +24,10 @@ libreoffice/
 # Local tool cache/state
 procps/
 yay/
-quickshell/
+
+# quickshell: track our own shell (mine); ignore any other/generated configs
+quickshell/*
+!quickshell/mine/
 
 # Next.js CLI telemetry state (anonymousId, salt)
 nextjs-nodejs/
