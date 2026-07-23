@@ -7,6 +7,7 @@ obsidian/
 hydralauncher/
 
 # Firefox: passwords, history, cookies, profiles — keep only user.js
+google-chrome
 mozilla/*
 !mozilla/firefox/
 mozilla/firefox/*
@@ -37,6 +38,7 @@ google-chrome-for-testing/
 
 # Claude Code local settings (settings.local.json)
 .claude/
+com.anthropic.*
 
 # Contains lastVisited paths from Qt file dialogs
 QtProject.conf

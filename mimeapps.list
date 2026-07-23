@@ -13,6 +13,11 @@ application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 text/plain=nvim.desktop
 application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program;text/win-bat;=PortProton.desktop
+application/pdf=firefox.desktop
+image/png=firefox.desktop
+image/jpeg=firefox.desktop
+image/webp=firefox.desktop
+image/gif=firefox.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
