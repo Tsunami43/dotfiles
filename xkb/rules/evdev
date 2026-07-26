@@ -1,0 +1,8 @@
+// User rules for libxkbcommon: keep everything from the system rules and add
+// one extra option that lives in ~/.config/xkb/symbols/custom.
+// The include comes first so our mapping is applied last and wins.
+
+! include %S/evdev
+
+! option = symbols
+  custom:caps_group_nocaps = +custom(caps_group_nocaps)

@@ -1,0 +1,10 @@
+// Caps Lock switches the keyboard layout and nothing else.
+//
+// Upstream grp:caps_toggle maps <CAPS> to [ISO_Next_Group, Caps_Lock], so
+// Shift+Caps still turns real Caps Lock on. Caps Lock is never wanted here,
+// so both levels switch the group instead and the Caps_Lock keysym is gone
+// entirely — the lock modifier can no longer be engaged from this key.
+partial modifier_keys
+xkb_symbols "caps_group_nocaps" {
+    key <CAPS> { [ ISO_Next_Group, ISO_Next_Group ], type[group1] = "TWO_LEVEL" };
+};
