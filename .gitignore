@@ -96,3 +96,6 @@ sqlit/
 **/*.env
 **/.env
 **/.env.*
+
+# quickshell shaders: .qsb is baked from .frag at login (assets/build-shaders.sh)
+quickshell/mine/assets/*.qsb
