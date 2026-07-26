@@ -26,9 +26,10 @@ libreoffice/
 procps/
 yay/
 
-# quickshell: track our own shell (mine); ignore any other/generated configs
+# quickshell: track our own shell (mine) and greeter; ignore any other/generated configs
 quickshell/*
 !quickshell/mine/
+!quickshell/greeter/
 
 # Next.js CLI telemetry state (anonymousId, salt)
 nextjs-nodejs/
