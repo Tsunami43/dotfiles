@@ -7,11 +7,20 @@ obsidian/
 hydralauncher/
 
 # Firefox: passwords, history, cookies, profiles — keep only user.js
-google-chrome
 mozilla/*
 !mozilla/firefox/
 mozilla/firefox/*
 !mozilla/firefox/user.js
+
+# Chromium-family browsers: profiles, cookies, caches. Right now these dirs hold nothing
+# but the Claude Code native-messaging manifest (ignored further down), yet they fill with
+# private state the moment the browser is launched.
+google-chrome
+BraveSoftware/
+chromium/
+microsoft-edge/
+opera/
+vivaldi/
 
 # Binary GNOME settings database with user state
 dconf/
