@@ -2,6 +2,9 @@
 font-size = 12
 
 # Window Configuration
+# Start in $HOME instead of inheriting the launcher's cwd (the single-instance
+# daemon keeps whatever directory the first window was spawned from).
+working-directory = home
 window-decoration = false
 window-padding-x = 0
 window-padding-y = 0
