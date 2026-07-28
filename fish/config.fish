@@ -33,9 +33,8 @@ alias neofetch="fastfetch"
 alias nf="fastfetch"
 alias ff="fastfetch"
 
-# top/htop/btop
-alias top="btop"
-alias htop="btop"
+# top/htop
+alias top="htop"
 
 # cat/bat
 alias cat="bat"
