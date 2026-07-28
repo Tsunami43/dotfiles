@@ -1,3 +1,7 @@
+htop_history
+# Local backup of the pre-tuning htoprc; git history covers this now
+htoprc.bak
+
 # === Fully private application data ===
 # Electron apps: cookies, session tokens, local cache, IndexedDB
 Slack/
