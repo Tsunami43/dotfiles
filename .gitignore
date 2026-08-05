@@ -39,10 +39,16 @@ libreoffice/
 procps/
 yay/
 
-# quickshell: track our own shell (mine) and greeter; ignore any other/generated configs
+# quickshell configs are their own projects now — nothingshell lives in its own git repository,
+# cloned into quickshell/nothingshell. Nothing under here belongs to the dotfiles.
 quickshell/*
-!quickshell/mine/
-!quickshell/greeter/
+
+# Everything the shell writes about itself: settings.json (rewritten on every application launch,
+# since it counts them to sort the launcher, and a log of what you use besides) and the Hyprland
+# fragments its settings pages regenerate in full. All of it is output, not configuration anyone
+# edits here, and it is recreated on demand — the shell writes a fresh monitors.conf the next time
+# a display setting changes.
+nothingshell/
 
 # Next.js CLI telemetry state (anonymousId, salt)
 nextjs-nodejs/
@@ -109,9 +115,3 @@ sqlit/
 **/*.env
 **/.env
 **/.env.*
-
-# quickshell shaders: .qsb is baked from .frag at login (assets/build-shaders.sh)
-quickshell/mine/assets/*.qsb
-
-# Shell settings written by quickshell at runtime (app usage counts, chosen theme/wallpaper)
-quickshell/mine/settings.json
