@@ -20,6 +20,7 @@ mozilla/firefox/*
 # but the Claude Code native-messaging manifest (ignored further down), yet they fill with
 # private state the moment the browser is launched.
 google-chrome
+google-chrome-headless
 BraveSoftware/
 chromium/
 microsoft-edge/
