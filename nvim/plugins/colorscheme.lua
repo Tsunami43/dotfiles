@@ -1,11 +1,11 @@
--- Managed by desktop-theme.py — concept: Ember — warm GitHub (white / orange / coral)
-vim.pack.add({ { src = "https://github.com/projekt0n/github-nvim-theme" } })
+-- Cendre · hard. The same palette the terminal, tmux and the rest now draw from.
+vim.pack.add({ { src = "https://github.com/Aejkatappaja/cendre" } })
 
-require("github-theme").setup({
-  options = { transparent = true, styles = { comments = "italic" } },
-  palettes = { github_dark_default = {
-    blue = { base = "#ff8c7a", bright = "#ffb3a3" },
-    cyan = { base = "#ffa198", bright = "#ffbcaf" } } },
+require("cendre").setup({
+  background = "hard",
+  -- The ground stays the terminal's, so ghostty's blur carries through the
+  -- buffer. tmux is the one surface that paints its own, and only in the bar.
+  transparent = true,
 })
 
-vim.cmd.colorscheme("github_dark_default")
+vim.cmd.colorscheme("cendre")

@@ -1,4 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": false
+  "autoupdate": false,
+  // Cendre · hard, from themes/cendre.json
+  "theme": "cendre"
 }

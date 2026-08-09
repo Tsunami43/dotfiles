@@ -1,47 +1,67 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
-# Managed by desktop-theme.py — Ember — warm GitHub (white / orange / coral) (transparent, fg-only)
+# Cendre · hard. Colours are named, not spelled out, so the prompt tracks
+# ~/Projects/me/cendre the same way the editor and the terminal do. Role
+# assignments follow that project's own starship extra.
+palette = "cendre"
 
 format = """
 $directory$git_branch$git_status$nodejs$rust$golang$php$python$time
 $character"""
 
+[palettes.cendre]
+bg      = "#171311"
+fg      = "#e6d5c2"
+fg_dim  = "#a09384"
+comment = "#73665b"
+cinder  = "#d1766e"
+ember   = "#ea9875"
+brass   = "#fcba81"
+sap     = "#99af6b"
+frost   = "#4e89a2"
+error   = "#d25780"
+warning = "#f4a21c"
+ok      = "#43b16a"
+info    = "#58bdff"
+
 [directory]
-style = "fg:#ff8c7a bold"
+style = "fg:ember bold"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-format = '[$symbol $branch ](fg:#e3b341)'
+format = '[$symbol $branch ](fg:cinder)'
 
 [git_status]
-format = '[$all_status$ahead_behind ](fg:#ff7b72)'
+format = '[$all_status$ahead_behind ](fg:warning)'
 
+# One hue per language, as cendre assigns them. php has no assignment there, so
+# it stays on plain dim ink rather than borrowing a meaning it does not have.
 [nodejs]
 symbol = ""
-format = '[$symbol ($version) ](fg:#ffb3a3)'
+format = '[$symbol ($version) ](fg:sap)'
 [rust]
 symbol = ""
-format = '[$symbol ($version) ](fg:#ffb3a3)'
+format = '[$symbol ($version) ](fg:cinder)'
 [golang]
 symbol = ""
-format = '[$symbol ($version) ](fg:#ffb3a3)'
+format = '[$symbol ($version) ](fg:frost)'
 [php]
 symbol = ""
-format = '[$symbol ($version) ](fg:#ffb3a3)'
+format = '[$symbol ($version) ](fg:fg_dim)'
 [python]
 symbol = ""
-format = '[$symbol ($version) ](fg:#ffb3a3)'
+format = '[$symbol ($version) ](fg:brass)'
 
 [time]
 disabled = false
 time_format = "%T"
-format = '[ $time ](fg:#8b949e)'
+format = '[ $time ](fg:comment)'
 
 [character]
-success_symbol = "[❯](bold fg:#ff8c7a)"
-error_symbol = "[❯](bold fg:#ff7b72)"
-vimcmd_symbol = "[❮](bold fg:#e3b341)"
+success_symbol = "[❯](bold fg:ember)"
+error_symbol = "[❯](bold fg:error)"
+vimcmd_symbol = "[❮](bold fg:sap)"
