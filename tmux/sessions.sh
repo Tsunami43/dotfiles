@@ -19,11 +19,11 @@ case "$SELF" in /*) ;; *) SELF="$PWD/$SELF" ;; esac
 
 PIN_ICON='◆' # single-width on purpose: the marker column must stay aligned
 
-# GitHub Dark with warm accents — same palette as tmux.conf. The pin marker and
-# the current session must not share a colour, or one reads as the other.
-C_ACCENT=$'\033[1;38;2;255;140;122m' # pins
-C_CURRENT=$'\033[1;38;2;63;185;80m'  # the session this client sits in
-C_DIM=$'\033[38;2;139;148;158m'
+# Cendre · hard — same palette as tmux.conf. The pin marker and the current
+# session must not share a colour, or one reads as the other.
+C_ACCENT=$'\033[1;38;2;234;152;117m' # ember   #ea9875 · pins
+C_CURRENT=$'\033[1;38;2;67;177;106m' # ok      #43b16a · the session this client sits in
+C_DIM=$'\033[38;2;115;102;91m'       # comment #73665b
 C_RESET=$'\033[0m'
 
 TMUX_FMT=$'#{session_name}\t#{session_windows}\t#{session_attached}\t#{@pinned}'
@@ -162,7 +162,7 @@ prompt_input() {
 		--pointer=' ' \
 		--header=$'  ↵ confirm   esc cancel\n' \
 		--header-first \
-		--color='fg:#f0f6fc,bg:-1,query:#f0f6fc,prompt:#ff8c7a,header:#8b949e')
+		--color='fg:#e6d5c2,bg:-1,query:#e6d5c2,prompt:#d1766e,header:#73665b')
 	status=$?
 	[ "$status" -ge 130 ] && return 1 # Esc / interrupt
 	printf '%s' "$out"
@@ -274,8 +274,8 @@ selected=$(cmd_list | fzf \
 	--header-first \
 	--preview="$SELF preview {1}" \
 	--preview-window='right,60%,border-left,nowrap' \
-	--color='fg:#f0f6fc,bg:-1,hl:#ff8c7a,fg+:#f0f6fc,bg+:#161b22,hl+:#ffb3a3' \
-	--color='info:#8b949e,prompt:#ff8c7a,pointer:#ff8c7a,header:#8b949e,border:#30363d' \
+	--color='fg:#a09384,bg:-1,hl:#ea9875,fg+:#e6d5c2,bg+:#201b19,hl+:#fcba81' \
+	--color='info:#73665b,prompt:#d1766e,pointer:#ea9875,header:#73665b,border:#362f2c' \
 	--bind="start:pos(${start_pos:-1})" \
 	--bind='ctrl-j:down,ctrl-k:up' \
 	--bind="ctrl-p:execute-silent($SELF toggle-pin {1})+transform($SELF focus {1})" \
