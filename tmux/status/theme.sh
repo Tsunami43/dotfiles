@@ -1,5 +1,5 @@
-# Cendre · hard — palette from ~/Projects/me/cendre (lua/cendre/palette.lua),
-# mirrored from the role names tmux.conf uses for the bar itself.
+# Cendre · hard — https://github.com/Aejkatappaja/cendre, mirroring the role
+# names tmux.conf uses for the bar itself.
 #
 # Colour lives here rather than in the segments so that "what does warm mean in
 # this bar" is one decision in one file. The right end of the bar is the quiet

@@ -6,7 +6,13 @@
 # the bar's centre column no matter what the window list is doing on the other
 # side. Nothing on the left is measured, so nothing on the left can push it.
 
-CLOCK_WIDTH=8 # the state slot: SUPER, COPY, or HH:MM:SS — all eight columns
+CLOCK_WIDTH=8 # HH:MM:SS
+MODE_WIDTH=10 # the mode slot past the right edge of this script's output:
+              # READY, PREFIX, COPY, RESIZE, SESSIONS, GIT — ten columns each,
+              # which is what the longest of them needs with a space either side.
+              # It is emitted by tmux.conf, not here, but it sits inside the
+              # same right-aligned string, so its width has to be accounted for
+              # or the clock lands eight columns left of the centre.
 
 # Width as the terminal will see it: the tmux #[...] directives are markup, not
 # glyphs. Done with the shell's own pattern matching rather than sed, because
@@ -41,7 +47,7 @@ emit() {
 	if [ "$client_width" -gt 0 ]; then
 		visible_width "$s"
 		centre=$(((client_width - CLOCK_WIDTH) / 2))
-		pad=$((client_width - centre - CLOCK_WIDTH - REPLY))
+		pad=$((client_width - centre - CLOCK_WIDTH - REPLY - MODE_WIDTH))
 		# Too narrow, or an unusually long branch: give up the centre rather
 		# than the content, and let the clock drift left as it used to.
 		[ "$pad" -lt 1 ] && pad=1
