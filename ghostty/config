@@ -1,4 +1,7 @@
 # Font Configuration
+# Maple Mono NF — rounded terminals, a true cursive italic for comments, and the
+# nerd-font glyphs lualine and yazi draw. Package: maplemono-nf-unhinted (AUR).
+font-family = Maple Mono NF
 font-size = 12
 
 # Window Configuration
@@ -11,8 +14,9 @@ window-padding-y = 0
 # Fill sub-cell leftover with neighbor cell color (removes the dark strip under lualine)
 window-padding-color = extend
 window-padding-balance = true
-background-opacity = 0.55
-background-blur-radius = 14
+# Opaque. The theme's own ground is what the editor is read against now, so
+# nothing from the wallpaper competes with the syntax colours sitting on it.
+background-opacity = 1
 
 # Cursor Configuration
 cursor-style = block

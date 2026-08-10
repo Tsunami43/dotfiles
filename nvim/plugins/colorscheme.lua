@@ -3,9 +3,10 @@ vim.pack.add({ { src = "https://github.com/Aejkatappaja/cendre" } })
 
 require("cendre").setup({
   background = "hard",
-  -- The ground stays the terminal's, so ghostty's blur carries through the
-  -- buffer. tmux is the one surface that paints its own, and only in the bar.
-  transparent = true,
+  -- The editor paints its own ground now that the terminal is opaque. Left
+  -- transparent, floats and the cursorline would inherit whatever sits behind
+  -- them instead of the layer the theme puts them on.
+  transparent = false,
 })
 
 vim.cmd.colorscheme("cendre")
