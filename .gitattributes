@@ -1,0 +1,2 @@
+# qt6ct rewrites its window geometry on every GUI close; keep it out of git.
+qt6ct/qt6ct.conf filter=qt6ct-geometry
