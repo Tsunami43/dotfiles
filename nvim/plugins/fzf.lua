@@ -1,5 +1,5 @@
 -- fzf-lua: fuzzy finder backed by the `fzf` binary (Telescope replacement).
--- Icons come from nvim-web-devicons (added by plugins/lualine.lua).
+-- Icons come from nvim-web-devicons (added by plugins/devicons.lua).
 vim.pack.add({
   { src = "https://github.com/ibhagwan/fzf-lua" },
 })
